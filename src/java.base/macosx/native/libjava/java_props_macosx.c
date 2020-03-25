@@ -235,12 +235,8 @@ void setOSNameAndVersion(java_props_t *sprops) {
     sprops->os_name = strdup("Mac OS X");
 
     char* osVersionCStr = NULL;
-    // Mac OS 10.9 includes the [NSProcessInfo operatingSystemVersion] function,
-    // but it's not in the 10.9 SDK.  So, call it via objc_msgSend_stret.
-    if ([[NSProcessInfo processInfo] respondsToSelector:@selector(operatingSystemVersion)]) {
-        OSVerStruct (*procInfoFn)(id rec, SEL sel) = (OSVerStruct(*)(id, SEL))objc_msgSend_stret;
-        OSVerStruct osVer = procInfoFn([NSProcessInfo processInfo],
-                                       @selector(operatingSystemVersion));
+    if (@available(macOS 10.10, *)) {
+        NSOperatingSystemVersion const osVer = NSProcessInfo.processInfo.operatingSystemVersion;
         NSString *nsVerStr;
         if (osVer.patchVersion == 0) { // Omit trailing ".0"
             nsVerStr = [NSString stringWithFormat:@"%ld.%ld",
@@ -251,9 +247,7 @@ void setOSNameAndVersion(java_props_t *sprops) {
         }
         // Copy out the char*
         osVersionCStr = strdup([nsVerStr UTF8String]);
-    }
-    // Fallback if running on pre-10.9 Mac OS
-    if (osVersionCStr == NULL) {
+    } else {
         NSDictionary *version = [NSDictionary dictionaryWithContentsOfFile :
                                  @"/System/Library/CoreServices/SystemVersion.plist"];
         if (version != NULL) {
@@ -262,9 +256,10 @@ void setOSNameAndVersion(java_props_t *sprops) {
                 osVersionCStr = strdup([nsVerStr UTF8String]);
             }
         }
-    }
-    if (osVersionCStr == NULL) {
-        osVersionCStr = strdup("Unknown");
+
+        if (osVersionCStr == NULL) {
+            osVersionCStr = strdup("Unknown");
+        }
     }
     sprops->os_version = osVersionCStr;
 }

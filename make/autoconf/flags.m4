@@ -235,10 +235,12 @@ AC_DEFUN([FLAGS_SETUP_SYSROOT_FLAGS],
   fi
 
   if test "x$OPENJDK_TARGET_OS" = xmacosx; then
-    # These always need to be set, or we can't find the frameworks embedded in JavaVM.framework
-    # set this here so it doesn't have to be peppered throughout the forest
-    $1SYSROOT_CFLAGS="[$]$1SYSROOT_CFLAGS -F [$]$1SYSROOT/System/Library/Frameworks/JavaVM.framework/Frameworks"
-    $1SYSROOT_LDFLAGS="[$]$1SYSROOT_LDFLAGS -F [$]$1SYSROOT/System/Library/Frameworks/JavaVM.framework/Frameworks"
+    if test -d "[$]$1SYSROOT/System/Library/Frameworks/JavaVM.framework/Frameworks" ; then
+      # These need to be set with macOS 10.15 and earlier SDKS, or we can't find the frameworks embedded
+      # in JavaVM.framework. Set this here so it doesn't have to be peppered throughout the forest.
+      $1SYSROOT_CFLAGS="[$]$1SYSROOT_CFLAGS -F [$]$1SYSROOT/System/Library/Frameworks/JavaVM.framework/Frameworks"
+      $1SYSROOT_LDFLAGS="[$]$1SYSROOT_LDFLAGS -F [$]$1SYSROOT/System/Library/Frameworks/JavaVM.framework/Frameworks"
+    fi
   fi
 
   AC_SUBST($1SYSROOT_CFLAGS)

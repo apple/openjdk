@@ -247,18 +247,21 @@ static void test_arraycopy_func(address func, int alignment) {
   // Use middle of array to check that memory before it is not modified.
   address buffer  = align_up((address)&lbuffer[4], BytesPerLong);
   address buffer2 = align_up((address)&lbuffer2[4], BytesPerLong);
+
+  arraycopy_fn copyfunc = CAST_TO_FN_PTR(arraycopy_fn, func);
+
   // do an aligned copy
-  ((arraycopy_fn)func)(buffer, buffer2, 0);
+  copyfunc(buffer, buffer2, 0);
   for (i = 0; i < sizeof(lbuffer); i++) {
     assert(fbuffer[i] == v && fbuffer2[i] == v2, "shouldn't have copied anything");
   }
   // adjust destination alignment
-  ((arraycopy_fn)func)(buffer, buffer2 + alignment, 0);
+  copyfunc(buffer, buffer2 + alignment, 0);
   for (i = 0; i < sizeof(lbuffer); i++) {
     assert(fbuffer[i] == v && fbuffer2[i] == v2, "shouldn't have copied anything");
   }
   // adjust source alignment
-  ((arraycopy_fn)func)(buffer + alignment, buffer2, 0);
+  copyfunc(buffer + alignment, buffer2, 0);
   for (i = 0; i < sizeof(lbuffer); i++) {
     assert(fbuffer[i] == v && fbuffer2[i] == v2, "shouldn't have copied anything");
   }

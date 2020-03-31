@@ -417,8 +417,14 @@ inline size_t pointer_delta(const MetaWord* left, const MetaWord* right) {
 // so far from the middle of the road that it is likely to be problematic in
 // many C++ compilers.
 //
+#if __has_feature(ptrauth_calls)
+#include <ptrauth.h>
+#define CAST_TO_FN_PTR(func_type, value) (reinterpret_cast<func_type>(value ? ptrauth_sign_unauthenticated(ptrauth_strip((void *)value, ptrauth_key_function_pointer), ptrauth_key_function_pointer, 0) : NULL))
+#define CAST_FROM_FN_PTR(new_type, func_ptr) ((new_type)((address_word)(ptrauth_strip((void *)func_ptr, ptrauth_key_function_pointer))))
+#else
 #define CAST_TO_FN_PTR(func_type, value) (reinterpret_cast<func_type>(value))
 #define CAST_FROM_FN_PTR(new_type, func_ptr) ((new_type)((address_word)(func_ptr)))
+#endif
 
 // Unsigned byte types for os and stream.hpp
 

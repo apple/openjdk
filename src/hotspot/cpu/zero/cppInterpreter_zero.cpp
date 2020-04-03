@@ -367,7 +367,7 @@ int CppInterpreter::native_entry(Method* method, intptr_t UNUSED, TRAPS) {
 
   // Make the call
   intptr_t result[4 - LogBytesPerWord];
-  ffi_call(handler->cif(), (void (*)()) function, result, arguments);
+  ffi_call(handler->cif(), CAST_TO_FN_PTR(void (*)(), function), result, arguments);
 
   // Change the thread state back to _thread_in_Java and ensure it
   // is seen by the GC thread.

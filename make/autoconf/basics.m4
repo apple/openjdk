@@ -1287,44 +1287,49 @@ AC_DEFUN_ONCE([BASIC_SETUP_COMPLEX_TOOLS],
     BASIC_REQUIRE_PROGS(DSYMUTIL, dsymutil)
     BASIC_REQUIRE_PROGS(MIG, mig)
     BASIC_REQUIRE_PROGS(XATTR, xattr)
-    BASIC_PATH_PROGS(CODESIGN, codesign)
+    BASIC_REQUIRE_PROGS(CODESIGN, codesign)
 
-    if test "x$CODESIGN" != "x"; then
-      # Check for user provided code signing identity.
-      # If no identity was provided, fall back to "openjdk_codesign".
-      AC_ARG_WITH([macosx-codesign-identity], [AS_HELP_STRING([--with-macosx-codesign-identity],
-        [specify the code signing identity])],
-        [MACOSX_CODESIGN_IDENTITY=$with_macosx_codesign_identity],
-        [MACOSX_CODESIGN_IDENTITY=openjdk_codesign]
-      )
+    # Check for user provided code signing identity.
+    # If no identity was provided, fall back to "openjdk_codesign".
+    AC_ARG_WITH([macosx-codesign-identity], [AS_HELP_STRING([--with-macosx-codesign-identity],
+      [specify the code signing identity])],
+      [MACOSX_CODESIGN_IDENTITY=$with_macosx_codesign_identity],
+      [MACOSX_CODESIGN_IDENTITY=openjdk_codesign]
+    )
 
-      AC_SUBST(MACOSX_CODESIGN_IDENTITY)
+    AC_SUBST(MACOSX_CODESIGN_IDENTITY)
 
-      # Verify that the codesign certificate is present
-      AC_MSG_CHECKING([if codesign certificate is present])
-      $RM codesign-testfile
-      $TOUCH codesign-testfile
-      $CODESIGN -s "$MACOSX_CODESIGN_IDENTITY" codesign-testfile 2>&AS_MESSAGE_LOG_FD \
-          >&AS_MESSAGE_LOG_FD || CODESIGN=
-      $RM codesign-testfile
-      if test "x$CODESIGN" = x; then
-        AC_MSG_RESULT([no])
+    # Verify that the codesign certificate is present
+    AC_MSG_CHECKING([if codesign identify ($MACOSX_CODESIGN_IDENTITY) is known])
+    $RM codesign-testfile
+    $TOUCH codesign-testfile
+    if $CODESIGN -s "$MACOSX_CODESIGN_IDENTITY" codesign-testfile 2>&AS_MESSAGE_LOG_FD >&AS_MESSAGE_LOG_FD ; then
+      AC_MSG_RESULT([yes])
+    else
+      AC_MSG_RESULT([no])
+      if test "$MACOSX_CODESIGN_IDENTITY" = "openjdk_codesign" ; then
+        # Fall back on adhoc signing by default if there is no openjdk_codesign identity
+        AC_MSG_WARN([Unable to locate default codesigning identify. Falling back on adhoc signing.])
+        MACOSX_CODESIGN_IDENTITY=-
       else
-        AC_MSG_RESULT([yes])
-        # Verify that the codesign has --option runtime
-        AC_MSG_CHECKING([if codesign has --option runtime])
         $RM codesign-testfile
-        $TOUCH codesign-testfile
-        $CODESIGN --option runtime -s "$MACOSX_CODESIGN_IDENTITY" codesign-testfile \
-            2>&AS_MESSAGE_LOG_FD >&AS_MESSAGE_LOG_FD || CODESIGN=
-        $RM codesign-testfile
-        if test "x$CODESIGN" = x; then
-          AC_MSG_ERROR([codesign does not have --option runtime. macOS 10.13.6 and above is required.])
-        else
-          AC_MSG_RESULT([yes])
-        fi
+        AC_MSG_ERROR([Unable to locate the requested codesigning identity. Please be sure your keychain is unlocked (eg: run security unlock /path/to/your.keychain)])
       fi
     fi
+    $RM codesign-testfile
+
+    # Verify that the codesign has --option runtime
+    AC_MSG_CHECKING([if codesign has --option runtime])
+    $TOUCH codesign-testfile
+    $CODESIGN --option runtime -s "$MACOSX_CODESIGN_IDENTITY" codesign-testfile \
+        2>&AS_MESSAGE_LOG_FD >&AS_MESSAGE_LOG_FD || CODESIGN=
+    $RM codesign-testfile
+    if test "x$CODESIGN" = x; then
+      AC_MSG_ERROR([codesign does not have --option runtime. macOS 10.13.6 and above is required.])
+    else
+      AC_MSG_RESULT([yes])
+    fi
+    $RM codesign-testfile
     BASIC_REQUIRE_PROGS(SETFILE, SetFile)
   elif test "x$OPENJDK_TARGET_OS" = "xsolaris"; then
     BASIC_REQUIRE_PROGS(ELFEDIT, elfedit)

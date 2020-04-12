@@ -130,8 +130,13 @@ AC_DEFUN([FLAGS_SETUP_MACOSX_VERSION],
     # of the OS. It currently has a hard coded value. Setting this also limits
     # exposure to API changes in header files. Bumping this is likely to
     # require code changes to build.
-    MACOSX_VERSION_MIN=10.9.0
-    MACOSX_VERSION_MIN_NODOTS=${MACOSX_VERSION_MIN//\./}
+    if test "x$OPENJDK_TARGET_CPU" = xaarch64 ; then
+        MACOSX_VERSION_MIN=10.16.0
+        MACOSX_VERSION_MIN_NODOTS=101600
+    else
+        MACOSX_VERSION_MIN=10.9.0
+        MACOSX_VERSION_MIN_NODOTS=1090
+    fi
 
     AC_SUBST(MACOSX_VERSION_MIN)
 

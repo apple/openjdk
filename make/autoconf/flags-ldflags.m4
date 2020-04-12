@@ -187,6 +187,14 @@ AC_DEFUN([FLAGS_SETUP_LDFLAGS_CPU_DEP],
       $1_CPU_LDFLAGS="$ARM_ARCH_TYPE_FLAGS $ARM_FLOAT_TYPE_FLAGS"
     fi
 
+  elif test "x$TOOLCHAIN_TYPE" = xclang; then
+    if test "x$OPENJDK_TARGET_OS" = xmacosx; then
+      if test "x${OPENJDK_$1_CPU}" = xaarch64; then
+        # override it to use arm64
+        $1_CPU_LDFLAGS="${$1_CPU_LDFLAGS} -arch arm64"
+      fi
+    fi
+
   elif test "x$TOOLCHAIN_TYPE" = xsolstudio; then
     if test "x${OPENJDK_$1_CPU}" = "xsparcv9"; then
       $1_CPU_LDFLAGS_JVM_ONLY="-xarch=sparc"
@@ -214,7 +222,8 @@ AC_DEFUN([FLAGS_SETUP_LDFLAGS_CPU_DEP],
 
   # Export variables according to old definitions, prefix with $2 if present.
   LDFLAGS_JDK_COMMON="$BASIC_LDFLAGS $BASIC_LDFLAGS_JDK_ONLY \
-      $OS_LDFLAGS_JDK_ONLY $DEBUGLEVEL_LDFLAGS_JDK_ONLY ${$2EXTRA_LDFLAGS}"
+      $OS_LDFLAGS_JDK_ONLY $DEBUGLEVEL_LDFLAGS_JDK_ONLY \
+      ${$1_CPU_LDFLAGS} ${$2EXTRA_LDFLAGS}"
   $2LDFLAGS_JDKLIB="$LDFLAGS_JDK_COMMON $BASIC_LDFLAGS_JDK_LIB_ONLY \
       ${$1_LDFLAGS_JDK_LIBPATH} $SHARED_LIBRARY_FLAGS"
   $2LDFLAGS_JDKEXE="$LDFLAGS_JDK_COMMON $EXECUTABLE_LDFLAGS \

@@ -12,8 +12,6 @@
 		3F012B3323DEDA5A00B98AC3 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D6A5FE840307C02AAC07 /* AppKit.framework */; };
 		3F012B3423DEDA9600B98AC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
 		3F012B3623DEDABE00B98AC3 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F012B3523DEDABE00B98AC3 /* CoreFoundation.framework */; };
-		3F012B3923E2A02100B98AC3 /* JNFLinkerSupport.c in Sources */ = {isa = PBXBuildFile; fileRef = 3F012B3823E2A02100B98AC3 /* JNFLinkerSupport.c */; };
-		3F012B3B23E2A4CA00B98AC3 /* JNFLinkerSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F012B3A23E2A4C300B98AC3 /* JNFLinkerSupport.h */; };
 		3F54DB0E23FF1C7100D311E0 /* jnf_fallback_jni_md.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA4788323E248E7005466BA /* jnf_fallback_jni_md.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F54DB0F23FF1C7100D311E0 /* jnf_fallback_jni.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA4788423E248E7005466BA /* jnf_fallback_jni.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8900DAEB0CB0365300EE572C /* JNFTypeCoercion.h in Headers */ = {isa = PBXBuildFile; fileRef = 8900DAE90CB0365300EE572C /* JNFTypeCoercion.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,8 +51,6 @@
 		2C69E261107824FF003EB656 /* JNFDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNFDate.h; sourceTree = "<group>"; };
 		2C69E26210782500003EB656 /* JNFDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNFDate.m; sourceTree = "<group>"; };
 		3F012B3523DEDABE00B98AC3 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		3F012B3823E2A02100B98AC3 /* JNFLinkerSupport.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = JNFLinkerSupport.c; sourceTree = "<group>"; };
-		3F012B3A23E2A4C300B98AC3 /* JNFLinkerSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JNFLinkerSupport.h; sourceTree = "<group>"; };
 		3FA4788323E248E7005466BA /* jnf_fallback_jni_md.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jnf_fallback_jni_md.h; sourceTree = "<group>"; };
 		3FA4788423E248E7005466BA /* jnf_fallback_jni.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jnf_fallback_jni.h; sourceTree = "<group>"; };
 		3FA4788A23E37879005466BA /* common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = common.xcconfig; sourceTree = "<group>"; };
@@ -224,8 +220,6 @@
 				3FA4788223E248E7005466BA /* external_headers */,
 				89AC83B80CAF4BE400480894 /* JavaNativeFoundation-Info.plist */,
 				89AC83920CAF4BD600480894 /* JavaNativeFoundation.h */,
-				3F012B3823E2A02100B98AC3 /* JNFLinkerSupport.c */,
-				3F012B3A23E2A4C300B98AC3 /* JNFLinkerSupport.h */,
 				89A01F910DA09A540015CD2A /* basics */,
 				89A01F800DA0994A0015CD2A /* conversion */,
 				89A01F900DA099DC0015CD2A /* threading */,
@@ -245,7 +239,6 @@
 				3F54DB0E23FF1C7100D311E0 /* jnf_fallback_jni_md.h in Headers */,
 				89AC839F0CAF4BD600480894 /* debug.h in Headers */,
 				89AC83A10CAF4BD600480894 /* JNFAssert.h in Headers */,
-				3F012B3B23E2A4CA00B98AC3 /* JNFLinkerSupport.h in Headers */,
 				89AC83A30CAF4BD600480894 /* JNFAutoreleasePool.h in Headers */,
 				89AC83A70CAF4BD600480894 /* JNFException.h in Headers */,
 				89AC83A90CAF4BD600480894 /* JavaNativeFoundation.h in Headers */,
@@ -275,7 +268,6 @@
 				8DC2EF520486A6940098B216 /* Resources */,
 				8DC2EF540486A6940098B216 /* Sources */,
 				8DC2EF560486A6940098B216 /* Frameworks */,
-				3F012B3723E29F6F00B98AC3 /* Legacy Symlink */,
 			);
 			buildRules = (
 			);
@@ -323,27 +315,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		3F012B3723E29F6F00B98AC3 /* Legacy Symlink */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Legacy Symlink";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "mkdir -p ${DSTROOT}/System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks\nln -fs /System/Library/Frameworks/JavaNativeFoundation.framework ${DSTROOT}/System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		8DC2EF540486A6940098B216 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -352,7 +323,6 @@
 				89AC83A00CAF4BD600480894 /* debug.m in Sources */,
 				89AC83A20CAF4BD600480894 /* JNFAssert.m in Sources */,
 				89AC83A40CAF4BD600480894 /* JNFAutoreleasePool.m in Sources */,
-				3F012B3923E2A02100B98AC3 /* JNFLinkerSupport.c in Sources */,
 				89AC83A80CAF4BD600480894 /* JNFException.m in Sources */,
 				89AC83AB0CAF4BD600480894 /* JNFJNI.m in Sources */,
 				89AC83AD0CAF4BD600480894 /* JNFNumber.m in Sources */,

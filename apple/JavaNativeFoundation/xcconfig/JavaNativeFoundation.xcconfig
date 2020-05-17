@@ -3,8 +3,6 @@ INSTALL_PATH = /System/Library/Frameworks
 
 HEADER_SEARCH_PATHS = "$(SRCROOT)/JavaNativeFoundation/external_headers";
 
-OTHER_TAPI_FLAGS = -extra-private-header $(SRCROOT)/JavaNativeFoundation/JNFLinkerSupport.h
-
 // TODO: These should be removed as issues are addressed
 CLANG_ENABLE_OBJC_ARC = NO
 GCC_ENABLE_OBJC_EXCEPTIONS = YES

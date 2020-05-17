@@ -12,8 +12,6 @@
 		3F012B3323DEDA5A00B98AC3 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D6A5FE840307C02AAC07 /* AppKit.framework */; };
 		3F012B3423DEDA9600B98AC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
 		3F012B3623DEDABE00B98AC3 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F012B3523DEDABE00B98AC3 /* CoreFoundation.framework */; };
-		3F54DB0E23FF1C7100D311E0 /* jnf_fallback_jni_md.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA4788323E248E7005466BA /* jnf_fallback_jni_md.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F54DB0F23FF1C7100D311E0 /* jnf_fallback_jni.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA4788423E248E7005466BA /* jnf_fallback_jni.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8900DAEB0CB0365300EE572C /* JNFTypeCoercion.h in Headers */ = {isa = PBXBuildFile; fileRef = 8900DAE90CB0365300EE572C /* JNFTypeCoercion.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8900DAEC0CB0365300EE572C /* JNFTypeCoercion.m in Sources */ = {isa = PBXBuildFile; fileRef = 8900DAEA0CB0365300EE572C /* JNFTypeCoercion.m */; };
 		89260F6E0CB622FC00FA4947 /* JNFThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 89260F6C0CB622FC00FA4947 /* JNFThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,8 +49,6 @@
 		2C69E261107824FF003EB656 /* JNFDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNFDate.h; sourceTree = "<group>"; };
 		2C69E26210782500003EB656 /* JNFDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNFDate.m; sourceTree = "<group>"; };
 		3F012B3523DEDABE00B98AC3 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		3FA4788323E248E7005466BA /* jnf_fallback_jni_md.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jnf_fallback_jni_md.h; sourceTree = "<group>"; };
-		3FA4788423E248E7005466BA /* jnf_fallback_jni.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jnf_fallback_jni.h; sourceTree = "<group>"; };
 		3FA4788A23E37879005466BA /* common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = common.xcconfig; sourceTree = "<group>"; };
 		3FA4788B23E37879005466BA /* JavaNativeFoundation.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = JavaNativeFoundation.xcconfig; sourceTree = "<group>"; };
 		8900DAE90CB0365300EE572C /* JNFTypeCoercion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNFTypeCoercion.h; sourceTree = "<group>"; };
@@ -129,15 +125,6 @@
 				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3FA4788223E248E7005466BA /* external_headers */ = {
-			isa = PBXGroup;
-			children = (
-				3FA4788323E248E7005466BA /* jnf_fallback_jni_md.h */,
-				3FA4788423E248E7005466BA /* jnf_fallback_jni.h */,
-			);
-			path = external_headers;
 			sourceTree = "<group>";
 		};
 		3FA4788923E37879005466BA /* xcconfig */ = {
@@ -217,7 +204,6 @@
 		89AC83870CAF4BD600480894 /* JavaNativeFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				3FA4788223E248E7005466BA /* external_headers */,
 				89AC83B80CAF4BE400480894 /* JavaNativeFoundation-Info.plist */,
 				89AC83920CAF4BD600480894 /* JavaNativeFoundation.h */,
 				89A01F910DA09A540015CD2A /* basics */,
@@ -236,7 +222,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F54DB0E23FF1C7100D311E0 /* jnf_fallback_jni_md.h in Headers */,
 				89AC839F0CAF4BD600480894 /* debug.h in Headers */,
 				89AC83A10CAF4BD600480894 /* JNFAssert.h in Headers */,
 				89AC83A30CAF4BD600480894 /* JNFAutoreleasePool.h in Headers */,
@@ -244,7 +229,6 @@
 				89AC83A90CAF4BD600480894 /* JavaNativeFoundation.h in Headers */,
 				89AC83AA0CAF4BD600480894 /* JNFJNI.h in Headers */,
 				89AC83AC0CAF4BD600480894 /* JNFNumber.h in Headers */,
-				3F54DB0F23FF1C7100D311E0 /* jnf_fallback_jni.h in Headers */,
 				89AC83AE0CAF4BD600480894 /* JNFObject.h in Headers */,
 				89AC83B00CAF4BD600480894 /* JNFPath.h in Headers */,
 				89AC83B20CAF4BD600480894 /* JNFString.h in Headers */,

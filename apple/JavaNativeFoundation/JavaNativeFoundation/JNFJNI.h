@@ -33,15 +33,7 @@
  *  re-throwing them as JNFExceptions, and are simpler than their pure JNI equivalents.
  */
 
-// First try pulling in the current jni.h from the JDK
-// Next, use the legacy Apple-provided copy from 1.6
-#if __has_include (<jni.h>)
 #import <jni.h>
-#else
-#warning Unable to locate <jni.h>.  Ensure $(/usr/libexec/java_home)/include is in your header search paths.  Falling back on Java 6 Version.
-#import <JavaNativeFoundation/jnf_fallback_jni.h>
-#endif
-
 #import <os/availability.h>
 #import <sys/cdefs.h>
 

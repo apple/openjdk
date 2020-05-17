@@ -1,5 +1,6 @@
 DEFINES_MODULE = YES
-INSTALL_PATH = /System/Library/Frameworks
+INSTALL_PATH = /
+DYLIB_INSTALL_NAME_BASE = @rpath
 
 HEADER_SEARCH_PATHS = $(SRCROOT)/../../src/java.base/share/native/include $(SRCROOT)/../../src/java.base/unix/native/include
 

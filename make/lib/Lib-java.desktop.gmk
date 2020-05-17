@@ -105,6 +105,7 @@ ifeq ($(call isTargetOs, macosx), true)
           -framework Cocoa \
           -framework Security \
           -framework ExceptionHandling \
+          -Wl$(COMMA)-rpath$(COMMA)@loader_path/../Frameworks \
           -framework JavaNativeFoundation \
           -framework JavaRuntimeSupport \
           -framework OpenGL \

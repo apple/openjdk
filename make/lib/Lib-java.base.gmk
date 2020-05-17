@@ -114,6 +114,7 @@ ifeq ($(call isTargetOs, macosx), true)
             $(call SET_SHARED_LIBRARY_ORIGIN), \
         LIBS := \
             -lobjc \
+            -Wl$(COMMA)-rpath$(COMMA)@loader_path/../Frameworks \
             -framework JavaNativeFoundation \
             -framework CoreServices \
             -framework Security \

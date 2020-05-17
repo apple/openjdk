@@ -1,7 +1,7 @@
 // Target information
 
 CODE_SIGN_IDENTITY = -
-CURRENT_PROJECT_VERSION = $(RC_ProjectSourceVersion)
+CURRENT_PROJECT_VERSION = 80
 PRODUCT_NAME = $(TARGET_NAME)
 PRODUCT_BUNDLE_IDENTIFIER = com.apple.$(TARGET_NAME:rfc1034identifier)
 VERSIONING_SYSTEM = apple-generic
@@ -13,10 +13,6 @@ SDKROOT = macosx
 
 IS_ZIPPERED = NO
 MACOSX_DEPLOYMENT_TARGET = 10.14
-
-// Set a default value that will be replaced by XBS
-RC_ProjectSourceVersion = 999
-RC_ProjectBuildVersion  = 1
 
 // Pre-includes
 

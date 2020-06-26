@@ -1,3 +1,10 @@
+Xcode OpenJDK
+=============
+
+This release of OpenJDK it to provide the community access to the source
+code modifications to OpenJDK as shipped in Xcode.  Its use outside of
+Xcode.app is not supported by Apple.
+
 
 Welcome to the JDK!
 ===================

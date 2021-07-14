@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JNFRunLoop Class Reference</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta charset="utf-8">
+    <meta id="book-resource-type" name="book-resource-type" content="Reference">
+    <meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40010551">
+	  <meta id="document-version" name="document-version" content="1.1.0">
+    <meta id="build" name="build" content="a4ac9e5766f95e9d57e77f1c7ec163e4">
+    <meta id="chapterId" name="chapterId" content="TP40010551-RH2">
+    <meta id="date" name="date" content="2011-01-06">
+    <meta id="description" name="description" content="Describes the interface for handling run-loop integration in the Java Native Foundation framework.">
+    <meta id="book-title" name="book-title" content="JNFRunLoop Class Reference">
+    <meta id="book-name" name="book-name" content="JNFRunLoopClassRef">
+    <meta id="book-root" name="book-root" content="../">
+    <meta id="book-json" name="book-json" content="../book.json">
+    <meta id="devcenter" name="devcenter" content="Mac Dev Center">
+    <meta id="devcenter-url" name="devcenter-url" content="http://developer.apple.com/devcenter/mac">
+    <meta id="reflib" name="reflib" content="Mac Developer Library">
+    <meta id="book-assignments" name="book-assignments" content="{Type/Reference}, {Topic/Cross Platform/Java}">
+    <meta name="pdf" contents="../JNFRunLoopClassRef.pdf"/><link id="book-pdf" media="print" rel="alternate" type="application/pdf" href="/web/20140604045641/https://developer.apple.com/library/mac/documentation/Java/Reference/JNFRunLoopClassRef/JNFRunLoopClassRef.pdf"/>
+    
+    <meta id="generator" name="generator" content="Gutenberg 003a3034">
+    <meta name="numbat" content="aa879094b666337fdcde744b62fbff30">
+    <meta id="copyright" name="copyright" content="Copyright 2014 Apple Inc. All Rights Reserved.">
+    <meta id="xcode-display" name="xcode-display" content="render">
+    <meta id="IndexTitle" name="IndexTitle" content="JNFRunLoop Class Reference">
+    <meta id="resources-uri" name="resources-uri" content="../../../../../Resources/910">
+    <link id="book-index-page" rel="Start" title="JNFRunLoop Class Reference" type="text/html" href="../index.html">
+    <link id="next-page" rel="Next" type="text/html" href="/web/20140604045641/https://developer.apple.com/library/mac/documentation/Java/Reference/JNFRunLoopClassRef/History/History.html">
+    <link id="previous-page" rel="Prev" type="text/html" href="">
+    <link rel="stylesheet" type="text/css" href="http://web.archive.org/web/20140604045641cs_/https://developer.apple.com/library/mac/Resources/910/CSS/screen.css">
+    <link rel="stylesheet" type="text/css" href="http://web.archive.org/web/20140604045641cs_/https://developer.apple.com/library/mac/Resources/910/CSS/feedback.css">
+</head>    
+<body>
+  <a name="//apple_ref/doc/uid/TP40010551-RH2" title="JNFRunLoop"></a>
+    <div id="adcHeader" class="hideOnPrint hideInXcode">
+        <div id="ssi_Header" class="hideInXcode mac">
+            <a id="ssi_LibraryTitle" href="/web/20140604045641/https://developer.apple.com/library/mac/navigation/">Mac Developer Library</a>
+            <a id="ssi_AppleDeveloperConnection" href="https://web.archive.org/web/20140604045641/https://developer.apple.com/">Developer</a>
+            <div id="ssi_SearchButton" role="button" title="Search">Search</div>
+        </div>
+        <form id="ssi_SearchMenu" method="get" action="/web/20140604045641/https://developer.apple.com/library/mac/search/" accept-charset="utf-8">
+            <label for="adcsearch">Search Mac Developer Library</label>
+            <input type="search" id="ssi_SearchField" name="q" accesskey="s" results="5"/>
+        </form>
+    </div>
+
+    <header id="header">
+        <div id="title" role="banner">
+            <h1>JNFRunLoop Class Reference</h1>
+            <span id="file_links">
+                <a id="PDF_link" role="button" tabindex="4" rel="alternate" title="Download PDF"><span id="pdf_icon"></span>PDF</a>
+                <a id="Companion_link" role="button" tabindex="3" title="Download Companion File"><span id="companion_icon"></span>Companion File</a>
+            </span>
+        </div>
+        <ul id="headerButtons" class="hideOnPrint" role="toolbar">
+            <li id="toc_button" style="display:none">
+                <button tabindex="5" id="table_of_contents" class="open" role="checkbox" aria-label="Show Table of Contents"><span class="disclosure"></span>Table of Contents</button>
+            </li>
+            <li id="jumpto_button" style="display:none" role="navigation"><select tabindex="6" id="jumpTo"><option value="top">Jump To</option></select></li>
+            <li id="downloadSample_button" style="display:none">
+                <a id="Sample_link"><button id="Sample_button">Download Sample Code</button></a>
+            </li>
+        </ul>
+    </header>
+    <nav id="tocContainer" tabindex="7">
+        <ul id="toc" role="tree"></ul>
+    </nav>
+
+    <article id="contents" tabindex="0" role="main">
+        <div id="pageNavigationLinks_top" class="pageNavigationLinks">
+            <a class="nextLink" rel="next" href="/web/20140604045641/https://developer.apple.com/library/mac/documentation/Java/Reference/JNFRunLoopClassRef/History/History.html">Next</a>
+        </div>
+        <a id="top" name="top"></a>
+        <a id="INDEX" href="/web/20140604045641/https://developer.apple.com/library/mac/documentation/Java/Reference/JNFRunLoopClassRef/index.html" style="display:none;"></a>
+        
+        <a name="//apple_ref/doc/uid/TP40010551" title="JNFRunLoop"></a><a name="//apple_ref/occ/cl/JNFRunLoop" title="JNFRunLoop"></a><a name="//apple_ref/doc/c_ref/JNFRunLoop" title="JNFRunLoop"></a><a name="//apple_ref/doc/uid/TP40010551-RH2-BBCGIEJC" title="JNFRunLoop"></a><h1 id="pageTitle">JNFRunLoop Class Reference</h1><div class="spec_sheet_info_box hideInXcode5"><table cellspacing="0" class="specbox"><tr><td scope="row"><strong><span class="InheritsFrom">Inherits from</span></strong></td><td><div class="zSharedSpecBoxHeadList"><a href="/web/20140604045641/https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html#//apple_ref/occ/cl/NSObject">NSObject</a></div></td></tr><tr><td scope="row"><strong><span class="FrameworkPath">Framework</span></strong></td><td><div class="zSharedSpecBoxHeadList">/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaNativeFoundation.framework</div></td></tr><tr><td scope="row"><strong><span class="DeclaredIn">Declared in</span></strong></td><td><div class="zSharedSpecBoxHeadList"><span class="content_text">JavaNativeFoundation/JNFRunLoop.h</span><br/></div></td></tr></table></div>
+
+<div id="Overview_section" class="zClassDescription"><a name="//apple_ref/doc/uid/TP40010551-RH2-DontLinkElementID_1" title="Overview"></a><h2 class="jump zClassDescription_Name">Overview</h2><p class="abstract">The <code>JNFRunLoop</code> class provides methods for executing selectors and blocks on an application’s main thread in the Java run-loop mode. Executing JNI tasks on the main thread lets you take advantage of the main thread’s existing JNI environment instead of creating a new environment for one-time use.</p></div><div id="Tasks_section" class="zMethodsByTask"><a name="//apple_ref/doc/uid/TP40010551-RH2-DontLinkElementID_5" title="Tasks"></a><h2 class="jump zMethodsByTask_Name">Tasks</h2>
+<a name="//apple_ref/doc/uid/TP40010551-RH2-SW1" title="Performing JNI Tasks on the Main Thread"></a>
+		<h3 class="tasks">Performing JNI Tasks on the Main Thread</h3>
+		
+		
+		
+		
+		<ul class="tooltip">
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/clm/JNFRunLoop/javaRunLoopMode">+javaRunLoopMode</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract="Returns the string value of the Java run-loop mode."></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/clm/JNFRunLoop/performOnMainThread:on:withObject:waitUntilDone:">+performOnMainThread:on:withObject:waitUntilDone:</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract="Performs a selector with a single argument on the application’s main thread in the Java run-loop mode."></span>
+                    
+                </span></li>
+			
+				
+                <li><span class="tooltip">
+                    
+                    <code><a href="#//apple_ref/occ/clm/JNFRunLoop/performOnMainThreadWaiting:withBlock:">+performOnMainThreadWaiting:withBlock:</a></code>
+                    
+                    			
+                        <span class="tooltipicon" data-abstract="Executes a block on the application’s main thread in the Java run-loop mode."></span>
+                    
+                </span></li>
+			
+		</ul>
+
+
+</div><a name="//apple_ref/doc/uid/TP40010551-RH2-DontLinkElementID_6" title="Class Methods"></a><h2 class="jump">Class Methods</h2><div class="api classMethod"><a name="//apple_ref/occ/clm/JNFRunLoop/javaRunLoopMode" title="javaRunLoopMode"></a><a name="//apple_ref/doc/uid/TP40010551-RH2-DontLinkElementID_2" title="javaRunLoopMode"></a><a name="//apple_ref/doc/uid/TP40010551-RH2-DontLinkElementID_7"></a><h3 class="jump classMethod">javaRunLoopMode</h3><p class="abstract">Returns the string value of the Java run-loop mode.</p><div class="declaration">+ (NSString *)javaRunLoopMode</div><div class="return_value"><h5 class="tight">Return Value</h5><p>The string value of the Java run-loop mode.</p></div>   </div><div class="api classMethod"><a name="//apple_ref/occ/clm/JNFRunLoop/performOnMainThread:on:withObject:waitUntilDone:" title="performOnMainThread:on:withObject:waitUntilDone:"></a><a name="//apple_ref/doc/uid/TP40010551-RH2-DontLinkElementID_3" title="performOnMainThread:on:withObject:waitUntilDone:"></a><a name="//apple_ref/doc/uid/TP40010551-RH2-DontLinkElementID_8"></a><h3 class="jump classMethod">performOnMainThread:on:withObject:waitUntilDone:</h3><p class="abstract">Performs a selector with a single argument on the application’s main thread in the Java run-loop mode.</p><div class="declaration">+ (void)performOnMainThread:(SEL)<em>aSelector</em> on:(id)<em>target</em> withObject:(id)<em>arg</em> waitUntilDone:(BOOL)<em>wait</em></div><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>aSelector</em></dt><dd><p>The selector to perform.</p></dd><dt><em>target</em></dt><dd><p>The receiver of the selector.</p></dd><dt><em>arg</em></dt><dd><p>The selector’s single argument.</p></dd><dt><em>wait</em></dt><dd><p>A Boolean value that indicates whether the method should wait for the selector to finish executing before returning.</p></dd></dl></div><div class="api discussion"><h5>Discussion</h5><p>Specifying <code>YES</code> for <em>wait</em> has undefined behavior if this method is called from the main thread.</p></div>  </div><div class="api classMethod"><a name="//apple_ref/occ/clm/JNFRunLoop/performOnMainThreadWaiting:withBlock:" title="performOnMainThreadWaiting:withBlock:"></a><a name="//apple_ref/doc/uid/TP40010551-RH2-DontLinkElementID_4" title="performOnMainThreadWaiting:withBlock:"></a><a name="//apple_ref/doc/uid/TP40010551-RH2-DontLinkElementID_9"></a><h3 class="jump classMethod">performOnMainThreadWaiting:withBlock:</h3><p class="abstract">Executes a block on the application’s main thread in the Java run-loop mode.</p><div class="declaration">+ (void)performOnMainThreadWaiting:(BOOL)<em>waitUntilDone</em> withBlock:(void (^)())<em>block</em></div><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>waitUntilDone</em></dt><dd><p>A Boolean value that indicates whether the method should wait for the block to finish executing before returning.</p></dd><dt><em>block</em></dt><dd><p>The block to execute.</p></dd></dl></div><div class="api discussion"><h5>Discussion</h5><p>Specifying <code>YES</code> for <em>waitUntilDone</em> has undefined behavior if this method is called from the main thread.</p></div>  </div>
+        <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
+            <a class="nextLink" rel="next" href="/web/20140604045641/https://developer.apple.com/library/mac/documentation/Java/Reference/JNFRunLoopClassRef/History/History.html">Next</a>
+        </div><br/>
+        <div class="copyright"><br/><hr/><div align="center"><p class="content_text" lang="en" dir="ltr"> Copyright  2011 Apple Inc. All Rights Reserved. <a href="https://web.archive.org/web/20140604045641/http://www.apple.com/legal/internet-services/terms/site.html" target="_blank">Terms of Use</a>   |  <a href="https://web.archive.org/web/20140604045641/http://www.apple.com/privacy/" target="_blank">Privacy Policy</a>  |  Updated: 2011-01-06</p></div></div>
+
+        <div id="pediaWindow">
+            <div id="pediaHeader"></div>
+            <div id="pediaBody"></div>
+        </div>
+    </article>
+
+    <div id="blackout">
+    <div id="preload"></div>
+</div>
+<div id="leave_feedback" class="button" role="button" tabindex="0">Feedback</div>
+<div id="modal" aria-hidden="true">
+    <div id="closebox" tabindex="0" aria-label="Close feedback form" role="button"></div>
+    <div id="sending" class="hidden">
+        <h2 tabindex="0">Sending feedback&hellip;</h2>
+        <div id="sending_img"></div>
+    </div>
+    <div id="error" class="hidden">
+        <h2 tabindex="0">We&rsquo;re sorry, an error has occurred.</h2>
+        <p>Please try submitting your feedback later.</p>
+        <div id="error_icon"></div>
+    </div>
+    <div id="success" class="hidden">
+        <h2 tabindex="0">Thank you for providing feedback!</h2>
+        <p>Your input helps improve our developer documentation.</p>
+        <div id="thank_you_icon"></div>
+    </div>
+    
+    <form id="feedback" action="#" method="post">
+        <div class="left-leaf">
+            <h2 id="helpful_title" data-asterisk="a1" tabindex="0">How helpful is this document?</h2>     
+            <sup id="a1" class="asterisk" aria-hidden="true">*</sup>
+
+            <div id="star_group" role="radiogroup" aria-required="true">
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="1"/> 
+                    Very helpful
+                </label>
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="2"/> 
+                    Somewhat helpful
+                </label>
+                <label>
+                    <input class="radio" type="radio" name="helped" value="3"/> 
+                    Not helpful
+                </label>
+            </div>
+        </div>
+        <div class="right-leaf">
+            <h2>How can we improve this document?</h2>
+            <div id="improve" class="checkboxes">
+                <label>
+                    <input type="checkbox" name="typo"/> 
+                    Fix typos or links
+                </label>
+                <label>
+                    <input type="checkbox" name="infoIncorrect"/> 
+                    Fix incorrect information
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_examples"/> 
+                    Add or update code samples
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_art"/> 
+                    Add or update illustrations
+                </label>
+                <label>
+                    <input type="checkbox" name="missingInfo"/> 
+                    Add information about...
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comment" name="problem" cols="70" rows="8" placeholder="Please tell us more about your experience with this document" data-asterisk="a2" required></textarea>
+        <sup id="a2" class="asterisk" aria-hidden="true">*</sup>
+
+        <input id="email" type="email" name="email" placeholder="Email (optional)" size="48">
+
+        <p class="fineprint">
+            <em aria-hidden="true"><span>*</span> Required information</em>
+        </p> 
+
+        <input id="submit" type="button" value="Send"/>
+
+        <section id="legal">
+            <p>
+                To submit a product bug or enhancement request, please visit the 
+                <a href="https://web.archive.org/web/20140604045641/https://developer.apple.com/bugreporter/" target="_blank">Bug Reporter</a> 
+                page.
+            </p>
+            <p>
+                Please read <a href="https://web.archive.org/web/20140604045641/http://www.apple.com/legal/policies/ideas.html" target="_blank">Apple's Unsolicited Idea Submission Policy</a> 
+                before you send us your feedback.
+            </p> 
+        </section>
+    </form>
+</div>
+
+    
+    <script charset="utf-8" src="/web/20140604045641js_/https://developer.apple.com/library/mac/Resources/910/JavaScript/lib/prototype.js"></script>
+    <script src="/web/20140604045641js_/https://developer.apple.com/library/mac/Resources/910/JavaScript/library.js"></script>
+    <script src="/web/20140604045641js_/https://developer.apple.com/library/mac/Resources/910/JavaScript/feedback.js"></script>
+</body>
+<script type="text/javascript" src="/web/20140604045641js_/https://developer.apple.com/library/webstats/pagetracker.js"></script>
+<script type="text/javascript">
+if(typeof PageTracker !== 'undefined') {
+  if(window.addEventListener) {
+    window.addEventListener("load", function(){PageTracker.logPageLoad()},false);
+  } else if(window.attachEvent) {
+    window.attachEvent("onload",function(){PageTracker.logPageLoad()});
+  }
+}
+</script>
+</html>

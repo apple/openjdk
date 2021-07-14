@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Java Native Foundation Functions Reference</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta charset="utf-8">
+    <meta id="book-resource-type" name="book-resource-type" content="Reference">
+    <meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40009262">
+	  <meta id="document-version" name="document-version" content="1.4.0">
+    <meta id="build" name="build" content="a4ac9e5766f95e9d57e77f1c7ec163e4">
+    <meta id="chapterId" name="chapterId" content="TP40009262-Reference">
+    <meta id="date" name="date" content="2011-01-06">
+    <meta id="description" name="description" content="Describes functions of the Java Native Foundation framework, which simplifies communication between the Java virtual machine and the Objective-C runtime.">
+    <meta id="book-title" name="book-title" content="Java Native Foundation Functions Reference">
+    <meta id="book-name" name="book-name" content="JavaNativeFoundation_Functions">
+    <meta id="book-root" name="book-root" content="../">
+    <meta id="book-json" name="book-json" content="../book.json">
+    <meta id="devcenter" name="devcenter" content="Mac Dev Center">
+    <meta id="devcenter-url" name="devcenter-url" content="http://developer.apple.com/devcenter/mac">
+    <meta id="reflib" name="reflib" content="Mac Developer Library">
+    <meta id="book-assignments" name="book-assignments" content="{Type/Reference}, {Topic/Cross Platform/Java}">
+    <meta name="pdf" contents="../JavaNativeFoundation_Functions.pdf"/><link id="book-pdf" media="print" rel="alternate" type="application/pdf" href="/web/20140604045802/https://developer.apple.com/library/mac/documentation/CrossPlatform/Reference/JavaNativeFoundation_Functions/JavaNativeFoundation_Functions.pdf"/>
+    
+    <meta id="generator" name="generator" content="Gutenberg 003a3034">
+    <meta name="numbat" content="aa879094b666337fdcde744b62fbff30">
+    <meta id="copyright" name="copyright" content="Copyright 2014 Apple Inc. All Rights Reserved.">
+    <meta id="xcode-display" name="xcode-display" content="render">
+    <meta id="IndexTitle" name="IndexTitle" content="Java Native Foundation Functions Reference">
+    <meta id="resources-uri" name="resources-uri" content="../../../../../Resources/910">
+    <link id="book-index-page" rel="Start" title="Java Native Foundation Functions Reference" type="text/html" href="../index.html">
+    <link id="next-page" rel="Next" type="text/html" href="/web/20140604045802/https://developer.apple.com/library/mac/documentation/CrossPlatform/Reference/JavaNativeFoundation_Functions/RevisionHistory.html">
+    <link id="previous-page" rel="Prev" type="text/html" href="">
+    <link rel="stylesheet" type="text/css" href="http://web.archive.org/web/20140604045802cs_/https://developer.apple.com/library/mac/Resources/910/CSS/screen.css">
+    <link rel="stylesheet" type="text/css" href="http://web.archive.org/web/20140604045802cs_/https://developer.apple.com/library/mac/Resources/910/CSS/feedback.css">
+</head>    
+<body>
+<a name="//apple_ref/doc/uid/TP40009262-Reference" title="Java Native Foundation Functions Reference"></a>
+    <div id="adcHeader" class="hideOnPrint hideInXcode">
+        <div id="ssi_Header" class="hideInXcode mac">
+            <a id="ssi_LibraryTitle" href="/web/20140604045802/https://developer.apple.com/library/mac/navigation/">Mac Developer Library</a>
+            <a id="ssi_AppleDeveloperConnection" href="https://web.archive.org/web/20140604045802/https://developer.apple.com/">Developer</a>
+            <div id="ssi_SearchButton" role="button" title="Search">Search</div>
+        </div>
+        <form id="ssi_SearchMenu" method="get" action="/web/20140604045802/https://developer.apple.com/library/mac/search/" accept-charset="utf-8">
+            <label for="adcsearch">Search Mac Developer Library</label>
+            <input type="search" id="ssi_SearchField" name="q" accesskey="s" results="5"/>
+        </form>
+    </div>
+
+    <header id="header">
+        <div id="title" role="banner">
+            <h1>Java Native Foundation Functions Reference</h1>
+            <span id="file_links">
+                <a id="PDF_link" role="button" tabindex="4" rel="alternate" title="Download PDF"><span id="pdf_icon"></span>PDF</a>
+                <a id="Companion_link" role="button" tabindex="3" title="Download Companion File"><span id="companion_icon"></span>Companion File</a>
+            </span>
+        </div>
+        <ul id="headerButtons" class="hideOnPrint" role="toolbar">
+            <li id="toc_button" style="display:none">
+                <button tabindex="5" id="table_of_contents" class="open" role="checkbox" aria-label="Show Table of Contents"><span class="disclosure"></span>Table of Contents</button>
+            </li>
+            <li id="jumpto_button" style="display:none" role="navigation"><select tabindex="6" id="jumpTo"><option value="top">Jump To</option></select></li>
+            <li id="downloadSample_button" style="display:none">
+                <a id="Sample_link"><button id="Sample_button">Download Sample Code</button></a>
+            </li>
+        </ul>
+    </header>
+    <nav id="tocContainer" tabindex="7">
+        <ul id="toc" role="tree"></ul>
+    </nav>
+
+    <article id="contents" tabindex="0" role="main">
+        <div id="pageNavigationLinks_top" class="pageNavigationLinks">
+            <a class="nextLink" rel="next" href="/web/20140604045802/https://developer.apple.com/library/mac/documentation/CrossPlatform/Reference/JavaNativeFoundation_Functions/RevisionHistory.html">Next</a>
+        </div>
+        <a id="top" name="top"></a>
+        <a id="INDEX" href="/web/20140604045802/https://developer.apple.com/library/mac/documentation/CrossPlatform/Reference/JavaNativeFoundation_Functions/index.html" style="display:none;"></a>
+        
+        <a name="//apple_ref/doc/uid/TP40009262" title="Java Native Foundation Functions Reference"></a><a name="//apple_ref/doc/uid/TP40009262-Reference-DontLinkElementID_102" title="Java Native Foundation Functions Reference"></a><h1 id="pageTitle">Java Native Foundation Functions Reference</h1><div class="spec_sheet_info_box hideInXcode5"><table cellspacing="0" class="specbox"><tr><td scope="row"><strong><span class="FrameworkPath">Framework</span></strong></td><td><div class="zSharedSpecBoxHeadList">/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaNativeFoundation.framework</div></td></tr><tr><td scope="row"><strong><span class="DeclaredIn">Declared in</span></strong></td><td><div class="zSharedSpecBoxHeadList"><span class="content_text">JavaNativeFoundation/JNFJNI.h</span><br/><span class="content_text">JavaNativeFoundation/JNFNumber.h</span><br/><span class="content_text">JavaNativeFoundation/JNFObject.h</span><br/><span class="content_text">JavaNativeFoundation/JNFPath.h</span><br/><span class="content_text">JavaNativeFoundation/JNFString.h</span><br/><span class="content_text">JavaNativeFoundation/JNFThread.h</span><br/></div></td></tr></table></div><section><a name="//apple_ref/doc/uid/TP40009262-CH1-DontLinkElementID_99" title="Overview"></a><h2 class="jump">Overview</h2><p>This document describes the functions, constants, and data types used to communicate between the Java virtual machine and the Objective-C runtime.</p></section><section><a name="//apple_ref/doc/uid/TP40009262-Reference-DontLinkElementID_100" title="Functions by Task"></a><h2 class="jump">Functions by Task</h2>
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_1" title="Handling Exceptions"></a>
+    
+    <h3 class="tasks">Handling Exceptions</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/macro/JNF_COCOA_ENTER">JNF_COCOA_ENTER</a></code>
+                
+					<span class="tooltipicon" data-abstract="A macro that indicates the beginning of a JNI method."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/macro/JNF_COCOA_EXIT">JNF_COCOA_EXIT</a></code>
+                
+					<span class="tooltipicon" data-abstract="A macro that indicates the end of a JNI method."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_2" title="Caching Class and Member Information"></a>
+    
+    <h3 class="tasks">Caching Class and Member Information</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/macro/JNF_CLASS_CACHE">JNF_CLASS_CACHE</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a <code>JNFClassInfo</code> struct with desired parameters."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/macro/JNF_MEMBER_CACHE">JNF_MEMBER_CACHE</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a <code>JNFMemberInfo</code> struct for a non-static field or method with desired parameters."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/macro/JNF_STATIC_MEMBER_CACHE">JNF_STATIC_MEMBER_CACHE</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a <code>JNFMemberInfo</code> struct for a static field or method with desired parameters."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/macro/JNF_CTOR_CACHE">JNF_CTOR_CACHE</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a <code>JNFMemberInfo</code> struct for a constructor method with desired parameters."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_3" title="Accessing Basic Java Object Functionality"></a>
+    
+    <h3 class="tasks">Accessing Basic Java Object Functionality</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFIsInstanceOf">JNFIsInstanceOf</a></code>
+                
+					<span class="tooltipicon" data-abstract="Returns the result of applying the <code>instanceof</code> operator to a given Java object with a given class."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNewObject">JNFNewObject</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a new Java object of a given class with a given constructor."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFObjectClassName">JNFObjectClassName</a></code>
+                
+					<span class="tooltipicon" data-abstract="Returns the result of calling <code>Object.getClass().toString()</code> on a given Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFObjectEquals">JNFObjectEquals</a></code>
+                
+					<span class="tooltipicon" data-abstract="Returns the result of calling <code>Object.equals()</code> with two given Java objects."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFObjectToString">JNFObjectToString</a></code>
+                
+					<span class="tooltipicon" data-abstract="Returns the result of calling <code>Object.toString()</code> on a given Java object."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_9" title="Creating Java Arrays"></a>
+    
+    <h3 class="tasks">Creating Java Arrays</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNewObjectArray">JNFNewObjectArray</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates an array of a specified size for instances of a specified Java class."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNewBooleanArray">JNFNewBooleanArray</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a Java <code>boolean</code> array of a specified size."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNewByteArray">JNFNewByteArray</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a Java <code>byte</code> array of a specified size."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNewCharArray">JNFNewCharArray</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a Java <code>char</code> array of a specified size."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNewShortArray">JNFNewShortArray</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a Java <code>short</code> array of a specified size."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNewIntArray">JNFNewIntArray</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a Java <code>int</code> array of a specified size."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNewLongArray">JNFNewLongArray</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a Java <code>long</code> array of a specified size."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNewFloatArray">JNFNewFloatArray</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a Java <code>long</code> array of a specified size."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNewDoubleArray">JNFNewDoubleArray</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a Java <code>double</code> array of a specified size."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_19" title="Getting Non-Static Fields of Java Objects"></a>
+    
+    <h3 class="tasks">Getting Non-Static Fields of Java Objects</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetObjectField">JNFGetObjectField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a non-static object field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetBooleanField">JNFGetBooleanField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a non-static boolean field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetByteField">JNFGetByteField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a non-static byte field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetCharField">JNFGetCharField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a non-static char field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetShortField">JNFGetShortField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a non-static short field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetIntField">JNFGetIntField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a non-static int field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetLongField">JNFGetLongField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a non-static long field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetFloatField">JNFGetFloatField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a non-static float field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetDoubleField">JNFGetDoubleField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a non-static double field of a Java object."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_29" title="Getting Static Fields of Java Objects"></a>
+    
+    <h3 class="tasks">Getting Static Fields of Java Objects</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetStaticObjectField">JNFGetStaticObjectField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a static object field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetStaticBooleanField">JNFGetStaticBooleanField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a static boolean field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetStaticByteField">JNFGetStaticByteField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a static byte field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetStaticCharField">JNFGetStaticCharField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a static char field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetStaticShortField">JNFGetStaticShortField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a static short field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetStaticIntField">JNFGetStaticIntField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a static int field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetStaticLongField">JNFGetStaticLongField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a static long field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetStaticFloatField">JNFGetStaticFloatField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a static float field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetStaticDoubleField">JNFGetStaticDoubleField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets a static double field of a Java object."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_39" title="Setting Non-Static Fields of Java Objects"></a>
+    
+    <h3 class="tasks">Setting Non-Static Fields of Java Objects</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetObjectField">JNFSetObjectField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a non-static object field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetBooleanField">JNFSetBooleanField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a non-static boolean field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetByteField">JNFSetByteField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a non-static byte field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetCharField">JNFSetCharField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a non-static char field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetShortField">JNFSetShortField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a non-static short field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetIntField">JNFSetIntField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a non-static int field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetLongField">JNFSetLongField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a non-static long field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetFloatField">JNFSetFloatField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a non-static float field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetDoubleField">JNFSetDoubleField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a non-static double field of a Java object."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_49" title="Setting Static Fields of Java Objects"></a>
+    
+    <h3 class="tasks">Setting Static Fields of Java Objects</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetStaticObjectField">JNFSetStaticObjectField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a static object field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetStaticBooleanField">JNFSetStaticBooleanField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a static boolean field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetStaticByteField">JNFSetStaticByteField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a static byte field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetStaticCharField">JNFSetStaticCharField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a static char field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetStaticShortField">JNFSetStaticShortField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a static short field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetStaticIntField">JNFSetStaticIntField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a static int field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetStaticLongField">JNFSetStaticLongField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a static long field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetStaticFloatField">JNFSetStaticFloatField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a static float field of a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFSetStaticDoubleField">JNFSetStaticDoubleField</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets a static double field of a Java object."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_59" title="Calling Non-Static Methods of Java Objects"></a>
+    
+    <h3 class="tasks">Calling Non-Static Methods of Java Objects</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallVoidMethod">JNFCallVoidMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a method of a Java object that returns void."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallObjectMethod">JNFCallObjectMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a method of a Java object that returns an object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallBooleanMethod">JNFCallBooleanMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a method of a Java object that returns a boolean."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallByteMethod">JNFCallByteMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a method of a Java object that returns a byte."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallCharMethod">JNFCallCharMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a method of a Java object that returns a char."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallShortMethod">JNFCallShortMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a method of a Java object that returns a short."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallIntMethod">JNFCallIntMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a method of a Java object that returns an int."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallLongMethod">JNFCallLongMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a method of a Java object that returns a long."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallFloatMethod">JNFCallFloatMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a method of a Java object that returns a float."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallDoubleMethod">JNFCallDoubleMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a method of a Java object that returns a double."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_70" title="Calling Static Methods of Java Objects"></a>
+    
+    <h3 class="tasks">Calling Static Methods of Java Objects</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallStaticVoidMethod">JNFCallStaticVoidMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a static method of a Java object that returns void."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallStaticObjectMethod">JNFCallStaticObjectMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a static method of a Java object that returns an object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallStaticBooleanMethod">JNFCallStaticBooleanMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a static method of a Java object that returns a boolean."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallStaticByteMethod">JNFCallStaticByteMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a static method of a Java object that returns a byte."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallStaticCharMethod">JNFCallStaticCharMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a static method of a Java object that returns a char."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallStaticShortMethod">JNFCallStaticShortMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a static method of a Java object that returns a short."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallStaticIntMethod">JNFCallStaticIntMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a static method of a Java object that returns an int."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallStaticLongMethod">JNFCallStaticLongMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a static method of a Java object that returns a long."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallStaticFloatMethod">JNFCallStaticFloatMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a static method of a Java object that returns a float."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFCallStaticDoubleMethod">JNFCallStaticDoubleMethod</a></code>
+                
+					<span class="tooltipicon" data-abstract="Calls a static method of a Java object that returns a double."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_81" title="Converting Between Java Numbers and NSNumbers"></a>
+    
+    <h3 class="tasks">Converting Between Java Numbers and NSNumbers</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFJavaToNSNumber">JNFJavaToNSNumber</a></code>
+                
+					<span class="tooltipicon" data-abstract="Converts a <code>java.lang.Number</code> object to an <code>NSNumber</code> object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNSToJavaNumber">JNFNSToJavaNumber</a></code>
+                
+					<span class="tooltipicon" data-abstract="Converts an <code>NSNumber</code> object to a <code>java.lang.Number</code> object."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_84" title="Converting Between Java Strings and NSStrings"></a>
+    
+    <h3 class="tasks">Converting Between Java Strings and NSStrings</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFJavaToNSString">JNFJavaToNSString</a></code>
+                
+					<span class="tooltipicon" data-abstract="Converts a <code>jstring</code> object to an <code>NSString</code> object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNSToJavaString">JNFNSToJavaString</a></code>
+                
+					<span class="tooltipicon" data-abstract="Converts an <code>NSString</code> object to a <code>jstring</code> object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNormalizedJavaStringForPath">JNFNormalizedJavaStringForPath</a></code>
+                
+					<span class="tooltipicon" data-abstract="Converts an <code>NSString</code> object to a <code>jstring</code> object suited for file system paths."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNormalizedNSStringForPath">JNFNormalizedNSStringForPath</a></code>
+                
+					<span class="tooltipicon" data-abstract="Converts a <code>jstring</code> object to an <code>NSString</code> object suited for file system paths."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_89" title="Converting Between Java Dates and NSDates"></a>
+    
+    <h3 class="tasks">Converting Between Java Dates and NSDates</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFJavaToNSDate">JNFJavaToNSDate</a></code>
+                
+					<span class="tooltipicon" data-abstract="Converts a <code>java.util.Calendar</code> object or a <code>java.util.Date</code> object to an <code>NSDate</code> object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNSToJavaCalendar">JNFNSToJavaCalendar</a></code>
+                
+					<span class="tooltipicon" data-abstract="Converts an <code>NSDate</code> object to a <code>java.util.Calendar</code> object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFJavaMillisToNSTimeInterval">JNFJavaMillisToNSTimeInterval</a></code>
+                
+					<span class="tooltipicon" data-abstract="Converts a millisecond time interval calculated from Java’s January 1, 1970 epoch to an <code>NSTimeInterval</code> object calculated from the January 1, 2001 epoch of OS X."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNSTimeIntervalToJavaMillis">JNFNSTimeIntervalToJavaMillis</a></code>
+                
+					<span class="tooltipicon" data-abstract="Converts an <code>NSTimeInterval</code> object calculated from the January 1, 2001 epoch of OS X to a millisecond time interval calculated from Java’s January 1, 1970 epoch."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_94" title="Converting Java Strings to Unicode"></a>
+    
+    <h3 class="tasks">Converting Java Strings to Unicode</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetStringUTF16UniChars">JNFGetStringUTF16UniChars</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets UTF-16 characters from a <code>jstring</code> object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFReleaseStringUTF16UniChars">JNFReleaseStringUTF16UniChars</a></code>
+                
+					<span class="tooltipicon" data-abstract="Releases UTF-16 characters obtained with <code>JNFGetStringUTF16UniChars</code>."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFGetStringUTF8Chars">JNFGetStringUTF8Chars</a></code>
+                
+					<span class="tooltipicon" data-abstract="Gets UTF-8 characters from a <code>jstring</code> object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFReleaseStringUTF8Chars">JNFReleaseStringUTF8Chars</a></code>
+                
+					<span class="tooltipicon" data-abstract="Releases UTF-8 characters obtained with <code>JNFGetStringUTF8Chars</code>."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_95" title="Accessing the Current JNI Environment"></a>
+    
+    <h3 class="tasks">Accessing the Current JNI Environment</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFObtainEnv">JNFObtainEnv</a></code>
+                
+					<span class="tooltipicon" data-abstract="Attaches the current thread to the Java VM and obtains a JNI environment to interact with it."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFPerformEnvBlock">JNFPerformEnvBlock</a></code>
+                
+					<span class="tooltipicon" data-abstract="Sets up a JNI environment and executes a specified block in it."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFReleaseEnv">JNFReleaseEnv</a></code>
+                
+					<span class="tooltipicon" data-abstract="Releases this thread’s JNI environment and detaches the thread from the Java VM."></span>
+            </span></li>
+    </ul>
+
+
+<a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_96" title="Managing Global References"></a>
+    
+    <h3 class="tasks">Managing Global References</h3>
+        
+    <ul class="tooltip">
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFNewGlobalRef">JNFNewGlobalRef</a></code>
+                
+					<span class="tooltipicon" data-abstract="Creates a global reference to a Java object."></span>
+            </span></li>
+            <li><span class="tooltip">
+                
+                <code><a href="#//apple_ref/c/func/JNFDeleteGlobalRef">JNFDeleteGlobalRef</a></code>
+                
+					<span class="tooltipicon" data-abstract="Deletes a global reference to a Java object."></span>
+            </span></li>
+    </ul>
+
+</section><section><a name="//apple_ref/doc/uid/TP40009262-CH3-SW1" title="Functions"></a><h2 class="jump">Functions</h2><a name="//apple_ref/c/func/JNFCallBooleanMethod" title="JNFCallBooleanMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallBooleanMethod" title="JNFCallBooleanMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_62" title="JNFCallBooleanMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_104"></a><h3 class="tight jump function">JNFCallBooleanMethod</h3><p class="abstract">Calls a method of a Java object that returns a boolean.</p><pre class="declaration">
+jboolean JNFCallBooleanMethod(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallByteMethod" title="JNFCallByteMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallByteMethod" title="JNFCallByteMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_63" title="JNFCallByteMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_105"></a><h3 class="tight jump function">JNFCallByteMethod</h3><p class="abstract">Calls a method of a Java object that returns a byte.</p><pre class="declaration">
+jbyte JNFCallByteMethod(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallCharMethod" title="JNFCallCharMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallCharMethod" title="JNFCallCharMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_64" title="JNFCallCharMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_106"></a><h3 class="tight jump function">JNFCallCharMethod</h3><p class="abstract">Calls a method of a Java object that returns a char.</p><pre class="declaration">
+jchar JNFCallCharMethod(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallDoubleMethod" title="JNFCallDoubleMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallDoubleMethod" title="JNFCallDoubleMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_69" title="JNFCallDoubleMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_107"></a><h3 class="tight jump function">JNFCallDoubleMethod</h3><p class="abstract">Calls a method of a Java object that returns a double.</p><pre class="declaration">
+jdouble JNFCallDoubleMethod(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallFloatMethod" title="JNFCallFloatMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallFloatMethod" title="JNFCallFloatMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_68" title="JNFCallFloatMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_108"></a><h3 class="tight jump function">JNFCallFloatMethod</h3><p class="abstract">Calls a method of a Java object that returns a float.</p><pre class="declaration">
+jfloat JNFCallFloatMethod(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallIntMethod" title="JNFCallIntMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallIntMethod" title="JNFCallIntMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_66" title="JNFCallIntMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_109"></a><h3 class="tight jump function">JNFCallIntMethod</h3><p class="abstract">Calls a method of a Java object that returns an int.</p><pre class="declaration">
+jint JNFCallIntMethod(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallLongMethod" title="JNFCallLongMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallLongMethod" title="JNFCallLongMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_67" title="JNFCallLongMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_110"></a><h3 class="tight jump function">JNFCallLongMethod</h3><p class="abstract">Calls a method of a Java object that returns a long.</p><pre class="declaration">
+jlong JNFCallLongMethod(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallObjectMethod" title="JNFCallObjectMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallObjectMethod" title="JNFCallObjectMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_61" title="JNFCallObjectMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_111"></a><h3 class="tight jump function">JNFCallObjectMethod</h3><p class="abstract">Calls a method of a Java object that returns an object.</p><pre class="declaration">
+jobject JNFCallObjectMethod(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallShortMethod" title="JNFCallShortMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallShortMethod" title="JNFCallShortMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_65" title="JNFCallShortMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_112"></a><h3 class="tight jump function">JNFCallShortMethod</h3><p class="abstract">Calls a method of a Java object that returns a short.</p><pre class="declaration">
+jshort JNFCallShortMethod(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallStaticBooleanMethod" title="JNFCallStaticBooleanMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallStaticBooleanMethod" title="JNFCallStaticBooleanMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_73" title="JNFCallStaticBooleanMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_113"></a><h3 class="tight jump function">JNFCallStaticBooleanMethod</h3><p class="abstract">Calls a static method of a Java object that returns a boolean.</p><pre class="declaration">
+jboolean JNFCallStaticBooleanMethod(
+   JNIEnv *env,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallStaticByteMethod" title="JNFCallStaticByteMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallStaticByteMethod" title="JNFCallStaticByteMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_74" title="JNFCallStaticByteMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_114"></a><h3 class="tight jump function">JNFCallStaticByteMethod</h3><p class="abstract">Calls a static method of a Java object that returns a byte.</p><pre class="declaration">
+jbyte JNFCallStaticByteMethod(
+   JNIEnv *env,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallStaticCharMethod" title="JNFCallStaticCharMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallStaticCharMethod" title="JNFCallStaticCharMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_75" title="JNFCallStaticCharMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_115"></a><h3 class="tight jump function">JNFCallStaticCharMethod</h3><p class="abstract">Calls a static method of a Java object that returns a char.</p><pre class="declaration">
+jchar JNFCallStaticCharMethod(
+   JNIEnv *env,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallStaticDoubleMethod" title="JNFCallStaticDoubleMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallStaticDoubleMethod" title="JNFCallStaticDoubleMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_80" title="JNFCallStaticDoubleMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_116"></a><h3 class="tight jump function">JNFCallStaticDoubleMethod</h3><p class="abstract">Calls a static method of a Java object that returns a double.</p><pre class="declaration">
+jdouble JNFCallStaticDoubleMethod(
+   JNIEnv *env,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallStaticFloatMethod" title="JNFCallStaticFloatMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallStaticFloatMethod" title="JNFCallStaticFloatMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_79" title="JNFCallStaticFloatMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_117"></a><h3 class="tight jump function">JNFCallStaticFloatMethod</h3><p class="abstract">Calls a static method of a Java object that returns a float.</p><pre class="declaration">
+jfloat JNFCallStaticFloatMethod(
+   JNIEnv *env,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallStaticIntMethod" title="JNFCallStaticIntMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallStaticIntMethod" title="JNFCallStaticIntMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_77" title="JNFCallStaticIntMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_118"></a><h3 class="tight jump function">JNFCallStaticIntMethod</h3><p class="abstract">Calls a static method of a Java object that returns an int.</p><pre class="declaration">
+jint JNFCallStaticIntMethod(
+   JNIEnv *env,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallStaticLongMethod" title="JNFCallStaticLongMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallStaticLongMethod" title="JNFCallStaticLongMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_78" title="JNFCallStaticLongMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_119"></a><h3 class="tight jump function">JNFCallStaticLongMethod</h3><p class="abstract">Calls a static method of a Java object that returns a long.</p><pre class="declaration">
+jlong JNFCallStaticLongMethod(
+   JNIEnv *env,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallStaticObjectMethod" title="JNFCallStaticObjectMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallStaticObjectMethod" title="JNFCallStaticObjectMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_72" title="JNFCallStaticObjectMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_120"></a><h3 class="tight jump function">JNFCallStaticObjectMethod</h3><p class="abstract">Calls a static method of a Java object that returns an object.</p><pre class="declaration">
+jobject JNFCallStaticObjectMethod(
+   JNIEnv *env,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallStaticShortMethod" title="JNFCallStaticShortMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallStaticShortMethod" title="JNFCallStaticShortMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_76" title="JNFCallStaticShortMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_121"></a><h3 class="tight jump function">JNFCallStaticShortMethod</h3><p class="abstract">Calls a static method of a Java object that returns a short.</p><pre class="declaration">
+jshort JNFCallStaticShortMethod(
+   JNIEnv *env,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of the method.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallStaticVoidMethod" title="JNFCallStaticVoidMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallStaticVoidMethod" title="JNFCallStaticVoidMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_71" title="JNFCallStaticVoidMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_122"></a><h3 class="tight jump function">JNFCallStaticVoidMethod</h3><p class="abstract">Calls a static method of a Java object that returns void.</p><pre class="declaration">
+void JNFCallStaticVoidMethod(
+   JNIEnv *env,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFCallVoidMethod" title="JNFCallVoidMethod"></a><a name="//apple_ref/doc/c_ref/JNFCallVoidMethod" title="JNFCallVoidMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_60" title="JNFCallVoidMethod"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_123"></a><h3 class="tight jump function">JNFCallVoidMethod</h3><p class="abstract">Calls a method of a Java object that returns void.</p><pre class="declaration">
+void JNFCallVoidMethod(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *method,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>method</em></dt><dd><p>The member information for the method.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the method.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFDeleteGlobalRef" title="JNFDeleteGlobalRef"></a><a name="//apple_ref/doc/c_ref/JNFDeleteGlobalRef" title="JNFDeleteGlobalRef"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_98" title="JNFDeleteGlobalRef"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_124"></a><h3 class="tight jump function">JNFDeleteGlobalRef</h3><p class="abstract">Deletes a global reference to a Java object.</p><pre class="declaration">
+void JNFDeleteGlobalRef(
+   JNIEnv *env,
+   jobject globalRef
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd></dl></div><a name="//apple_ref/c/func/JNFGetBooleanField" title="JNFGetBooleanField"></a><a name="//apple_ref/doc/c_ref/JNFGetBooleanField" title="JNFGetBooleanField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_21" title="JNFGetBooleanField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_125"></a><h3 class="tight jump function">JNFGetBooleanField</h3><p class="abstract">Gets a non-static boolean field of a Java object.</p><pre class="declaration">
+jboolean JNFGetBooleanField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the boolean field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The boolean stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetByteField" title="JNFGetByteField"></a><a name="//apple_ref/doc/c_ref/JNFGetByteField" title="JNFGetByteField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_22" title="JNFGetByteField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_126"></a><h3 class="tight jump function">JNFGetByteField</h3><p class="abstract">Gets a non-static byte field of a Java object.</p><pre class="declaration">
+jbyte JNFGetByteField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the byte field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The byte stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetCharField" title="JNFGetCharField"></a><a name="//apple_ref/doc/c_ref/JNFGetCharField" title="JNFGetCharField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_23" title="JNFGetCharField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_127"></a><h3 class="tight jump function">JNFGetCharField</h3><p class="abstract">Gets a non-static char field of a Java object.</p><pre class="declaration">
+jchar JNFGetCharField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the char field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The char stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetDoubleField" title="JNFGetDoubleField"></a><a name="//apple_ref/doc/c_ref/JNFGetDoubleField" title="JNFGetDoubleField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_28" title="JNFGetDoubleField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_128"></a><h3 class="tight jump function">JNFGetDoubleField</h3><p class="abstract">Gets a non-static double field of a Java object.</p><pre class="declaration">
+jdouble JNFGetDoubleField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the double field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The double stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetFloatField" title="JNFGetFloatField"></a><a name="//apple_ref/doc/c_ref/JNFGetFloatField" title="JNFGetFloatField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_27" title="JNFGetFloatField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_129"></a><h3 class="tight jump function">JNFGetFloatField</h3><p class="abstract">Gets a non-static float field of a Java object.</p><pre class="declaration">
+jfloat JNFGetFloatField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the float field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The float stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetIntField" title="JNFGetIntField"></a><a name="//apple_ref/doc/c_ref/JNFGetIntField" title="JNFGetIntField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_25" title="JNFGetIntField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_130"></a><h3 class="tight jump function">JNFGetIntField</h3><p class="abstract">Gets a non-static int field of a Java object.</p><pre class="declaration">
+jint JNFGetIntField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the int field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The int stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetLongField" title="JNFGetLongField"></a><a name="//apple_ref/doc/c_ref/JNFGetLongField" title="JNFGetLongField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_26" title="JNFGetLongField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_131"></a><h3 class="tight jump function">JNFGetLongField</h3><p class="abstract">Gets a non-static long field of a Java object.</p><pre class="declaration">
+jlong JNFGetLongField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the long field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The long stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetObjectField" title="JNFGetObjectField"></a><a name="//apple_ref/doc/c_ref/JNFGetObjectField" title="JNFGetObjectField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_20" title="JNFGetObjectField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_132"></a><h3 class="tight jump function">JNFGetObjectField</h3><p class="abstract">Gets a non-static object field of a Java object.</p><pre class="declaration">
+jobject JNFGetObjectField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The object stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetShortField" title="JNFGetShortField"></a><a name="//apple_ref/doc/c_ref/JNFGetShortField" title="JNFGetShortField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_24" title="JNFGetShortField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_133"></a><h3 class="tight jump function">JNFGetShortField</h3><p class="abstract">Gets a non-static short field of a Java object.</p><pre class="declaration">
+jshort JNFGetShortField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the short field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The short stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetStaticBooleanField" title="JNFGetStaticBooleanField"></a><a name="//apple_ref/doc/c_ref/JNFGetStaticBooleanField" title="JNFGetStaticBooleanField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_31" title="JNFGetStaticBooleanField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_134"></a><h3 class="tight jump function">JNFGetStaticBooleanField</h3><p class="abstract">Gets a static boolean field of a Java object.</p><pre class="declaration">
+jboolean JNFGetStaticBooleanField(
+   JNIEnv *env,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the boolean field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The boolean stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetStaticByteField" title="JNFGetStaticByteField"></a><a name="//apple_ref/doc/c_ref/JNFGetStaticByteField" title="JNFGetStaticByteField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_32" title="JNFGetStaticByteField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_135"></a><h3 class="tight jump function">JNFGetStaticByteField</h3><p class="abstract">Gets a static byte field of a Java object.</p><pre class="declaration">
+jbyte JNFGetStaticByteField(
+   JNIEnv *env,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the byte field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The byte stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetStaticCharField" title="JNFGetStaticCharField"></a><a name="//apple_ref/doc/c_ref/JNFGetStaticCharField" title="JNFGetStaticCharField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_33" title="JNFGetStaticCharField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_136"></a><h3 class="tight jump function">JNFGetStaticCharField</h3><p class="abstract">Gets a static char field of a Java object.</p><pre class="declaration">
+jchar JNFGetStaticCharField(
+   JNIEnv *env,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the char field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The char stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetStaticDoubleField" title="JNFGetStaticDoubleField"></a><a name="//apple_ref/doc/c_ref/JNFGetStaticDoubleField" title="JNFGetStaticDoubleField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_38" title="JNFGetStaticDoubleField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_137"></a><h3 class="tight jump function">JNFGetStaticDoubleField</h3><p class="abstract">Gets a static double field of a Java object.</p><pre class="declaration">
+jdouble JNFGetStaticDoubleField(
+   JNIEnv *env,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the double field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The double stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetStaticFloatField" title="JNFGetStaticFloatField"></a><a name="//apple_ref/doc/c_ref/JNFGetStaticFloatField" title="JNFGetStaticFloatField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_37" title="JNFGetStaticFloatField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_138"></a><h3 class="tight jump function">JNFGetStaticFloatField</h3><p class="abstract">Gets a static float field of a Java object.</p><pre class="declaration">
+jfloat JNFGetStaticFloatField(
+   JNIEnv *env,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the float field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The float stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetStaticIntField" title="JNFGetStaticIntField"></a><a name="//apple_ref/doc/c_ref/JNFGetStaticIntField" title="JNFGetStaticIntField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_35" title="JNFGetStaticIntField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_139"></a><h3 class="tight jump function">JNFGetStaticIntField</h3><p class="abstract">Gets a static int field of a Java object.</p><pre class="declaration">
+jint JNFGetStaticIntField(
+   JNIEnv *env,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the int field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The int stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetStaticLongField" title="JNFGetStaticLongField"></a><a name="//apple_ref/doc/c_ref/JNFGetStaticLongField" title="JNFGetStaticLongField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_36" title="JNFGetStaticLongField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_140"></a><h3 class="tight jump function">JNFGetStaticLongField</h3><p class="abstract">Gets a static long field of a Java object.</p><pre class="declaration">
+jlong JNFGetStaticLongField(
+   JNIEnv *env,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the long field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The long stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetStaticObjectField" title="JNFGetStaticObjectField"></a><a name="//apple_ref/doc/c_ref/JNFGetStaticObjectField" title="JNFGetStaticObjectField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_30" title="JNFGetStaticObjectField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_141"></a><h3 class="tight jump function">JNFGetStaticObjectField</h3><p class="abstract">Gets a static object field of a Java object.</p><pre class="declaration">
+jobject JNFGetStaticObjectField(
+   JNIEnv *env,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The object stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetStaticShortField" title="JNFGetStaticShortField"></a><a name="//apple_ref/doc/c_ref/JNFGetStaticShortField" title="JNFGetStaticShortField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_34" title="JNFGetStaticShortField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_142"></a><h3 class="tight jump function">JNFGetStaticShortField</h3><p class="abstract">Gets a static short field of a Java object.</p><pre class="declaration">
+jshort JNFGetStaticShortField(
+   JNIEnv *env,
+   JNFMemberInfo *field
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the short field.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The short stored in <em>field</em>.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFGetStringUTF16UniChars" title="JNFGetStringUTF16UniChars"></a><a name="//apple_ref/doc/c_ref/JNFGetStringUTF16UniChars" title="JNFGetStringUTF16UniChars"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW2" title="JNFGetStringUTF16UniChars"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_143"></a><h3 class="tight jump function">JNFGetStringUTF16UniChars</h3><p class="abstract">Gets UTF-16 characters from a <code>jstring</code> object.</p><pre class="declaration">
+const unichar *JNFGetStringUTF16UniChars(
+   JNIEnv *env,
+   jstring javaString
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>javaString</em></dt><dd><p>The <code>jstring</code> object to convert.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>A UTF-16 character array representation of <em>javaString</em>.</p></div>   <div class="api discussion"><h5>Discussion</h5><p>This function raises a JNFException if UTF-16 characters cannot be obtained.</p><p>You need to release the return value with <code><a href="#//apple_ref/c/func/JNFReleaseStringUTF16UniChars">JNFReleaseStringUTF16UniChars</a></code>.</p></div>  <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFString.h</code></div><a name="//apple_ref/c/func/JNFGetStringUTF8Chars" title="JNFGetStringUTF8Chars"></a><a name="//apple_ref/doc/c_ref/JNFGetStringUTF8Chars" title="JNFGetStringUTF8Chars"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW4" title="JNFGetStringUTF8Chars"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_144"></a><h3 class="tight jump function">JNFGetStringUTF8Chars</h3><p class="abstract">Gets UTF-8 characters from a <code>jstring</code> object.</p><pre class="declaration">
+const char *JNFGetStringUTF8Chars(
+   JNIEnv *env,
+   jstring javaString
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>javaString</em></dt><dd><p>The <code>jstring</code> object to convert.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>A UTF-8 character array representation of <em>javaString</em>.</p></div>   <div class="api discussion"><h5>Discussion</h5><p>This function raises a JNFException if UTF-8 characters cannot be obtained.</p><p>You need to release the return value with <code><a href="#//apple_ref/c/func/JNFReleaseStringUTF8Chars">JNFReleaseStringUTF8Chars</a></code>.</p></div>  <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFString.h</code></div><a name="//apple_ref/c/func/JNFIsInstanceOf" title="JNFIsInstanceOf"></a><a name="//apple_ref/doc/c_ref/JNFIsInstanceOf" title="JNFIsInstanceOf"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_4" title="JNFIsInstanceOf"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_145"></a><h3 class="tight jump function">JNFIsInstanceOf</h3><p class="abstract">Returns the result of applying the <code>instanceof</code> operator to a given Java object with a given class.</p><pre class="declaration">
+BOOL JNFIsInstanceOf(
+   JNIEnv *env,
+   jobject obj,
+   JNFClassInfo *clazz
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>clazz</em></dt><dd><p>The class to compare against.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p><code>YES</code> if <em>obj</em> is an instance of <em>clazz</em>; otherwise, <code>NO</code>.</p></div>   <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFJNI.h</code></div><a name="//apple_ref/c/func/JNFJavaMillisToNSTimeInterval" title="JNFJavaMillisToNSTimeInterval"></a><a name="//apple_ref/doc/c_ref/JNFJavaMillisToNSTimeInterval" title="JNFJavaMillisToNSTimeInterval"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_92" title="JNFJavaMillisToNSTimeInterval"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_146"></a><h3 class="tight jump function">JNFJavaMillisToNSTimeInterval</h3><p class="abstract">Converts a millisecond time interval calculated from Java’s January 1, 1970 epoch to an <code>NSTimeInterval</code> object calculated from the January 1, 2001 epoch of OS X.</p><pre class="declaration">
+NSTimeInterval JNFJavaMillisToNSTimeInterval(
+   jlong javaMillisSince1970
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>javaMillisSince1970</em></dt><dd><p>The Java interval to convert.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>An <code>NSTimeInterval</code> representation of <code>javaMillisSince1970</code>.</p></div>   <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFDate.h</code></div><a name="//apple_ref/c/func/JNFJavaToNSDate" title="JNFJavaToNSDate"></a><a name="//apple_ref/doc/c_ref/JNFJavaToNSDate" title="JNFJavaToNSDate"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_90" title="JNFJavaToNSDate"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_147"></a><h3 class="tight jump function">JNFJavaToNSDate</h3><p class="abstract">Converts a <code>java.util.Calendar</code> object or a <code>java.util.Date</code> object to an <code>NSDate</code> object.</p><pre class="declaration">
+NSDate *JNFJavaToNSDate(
+   JNIEnv *env,
+   jobject date
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>date</em></dt><dd><p>The <code>java.util.Calendar</code> object or <code>java.util.Date</code> object to convert.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>An autoreleased <code>NSDate</code> representation of <code>date</code>.</p></div>   <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFDate.h</code></div><a name="//apple_ref/c/func/JNFJavaToNSNumber" title="JNFJavaToNSNumber"></a><a name="//apple_ref/doc/c_ref/JNFJavaToNSNumber" title="JNFJavaToNSNumber"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_82" title="JNFJavaToNSNumber"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_148"></a><h3 class="tight jump function">JNFJavaToNSNumber</h3><p class="abstract">Converts a <code>java.lang.Number</code> object to an <code>NSNumber</code> object.</p><pre class="declaration">
+NSNumber *JNFJavaToNSNumber(
+   JNIEnv *env,
+   jobject n
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>n</em></dt><dd><p>The <code>java.lang.Number</code> object.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>An autoreleased <code>NSNumber</code> representation of <em>n</em>.</p></div>   <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFNumber.h</code></div><a name="//apple_ref/c/func/JNFJavaToNSString" title="JNFJavaToNSString"></a><a name="//apple_ref/doc/c_ref/JNFJavaToNSString" title="JNFJavaToNSString"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_85" title="JNFJavaToNSString"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_149"></a><h3 class="tight jump function">JNFJavaToNSString</h3><p class="abstract">Converts a <code>jstring</code> object to an <code>NSString</code> object.</p><pre class="declaration">
+NSString *JNFJavaToNSString(
+   JNIEnv *env,
+   jstring javaString
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>javaString</em></dt><dd><p>The <code>jstring</code> object to convert.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>An autoreleased <code>NSString</code> representation of <em>javaString</em>.</p></div>   <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFString.h</code></div><a name="//apple_ref/c/func/JNFNewBooleanArray" title="JNFNewBooleanArray"></a><a name="//apple_ref/doc/c_ref/JNFNewBooleanArray" title="JNFNewBooleanArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_11" title="JNFNewBooleanArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_150"></a><h3 class="tight jump function">JNFNewBooleanArray</h3><p class="abstract">Creates a Java <code>boolean</code> array of a specified size.</p><pre class="declaration">
+jbooleanArray JNFNewBooleanArray(
+   JNIEnv *env,
+   jsize length
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>length</em></dt><dd><p>The length of the array.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The created array.</p></div>   <a name="//apple_ref/c/func/JNFNewByteArray" title="JNFNewByteArray"></a><a name="//apple_ref/doc/c_ref/JNFNewByteArray" title="JNFNewByteArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_12" title="JNFNewByteArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_151"></a><h3 class="tight jump function">JNFNewByteArray</h3><p class="abstract">Creates a Java <code>byte</code> array of a specified size.</p><pre class="declaration">
+jbyteArray JNFNewByteArray(
+   JNIEnv *env,
+   jsize length
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>length</em></dt><dd><p>The length of the array.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The created array.</p></div>   <a name="//apple_ref/c/func/JNFNewCharArray" title="JNFNewCharArray"></a><a name="//apple_ref/doc/c_ref/JNFNewCharArray" title="JNFNewCharArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_13" title="JNFNewCharArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_152"></a><h3 class="tight jump function">JNFNewCharArray</h3><p class="abstract">Creates a Java <code>char</code> array of a specified size.</p><pre class="declaration">
+jcharArray JNFNewCharArray(
+   JNIEnv *env,
+   jsize length
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>length</em></dt><dd><p>The length of the array.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The created array.</p></div>   <a name="//apple_ref/c/func/JNFNewDoubleArray" title="JNFNewDoubleArray"></a><a name="//apple_ref/doc/c_ref/JNFNewDoubleArray" title="JNFNewDoubleArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_18" title="JNFNewDoubleArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_153"></a><h3 class="tight jump function">JNFNewDoubleArray</h3><p class="abstract">Creates a Java <code>double</code> array of a specified size.</p><pre class="declaration">
+jdoubleArray JNFNewDoubleArray(
+   JNIEnv *env,
+   jsize length
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>length</em></dt><dd><p>The length of the array.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The created array.</p></div>   <a name="//apple_ref/c/func/JNFNewFloatArray" title="JNFNewFloatArray"></a><a name="//apple_ref/doc/c_ref/JNFNewFloatArray" title="JNFNewFloatArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_17" title="JNFNewFloatArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_154"></a><h3 class="tight jump function">JNFNewFloatArray</h3><p class="abstract">Creates a Java <code>long</code> array of a specified size.</p><pre class="declaration">
+jfloatArray JNFNewFloatArray(
+   JNIEnv *env,
+   jsize length
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>length</em></dt><dd><p>The length of the array.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The created array.</p></div>   <a name="//apple_ref/c/func/JNFNewGlobalRef" title="JNFNewGlobalRef"></a><a name="//apple_ref/doc/c_ref/JNFNewGlobalRef" title="JNFNewGlobalRef"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_97" title="JNFNewGlobalRef"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_155"></a><h3 class="tight jump function">JNFNewGlobalRef</h3><p class="abstract">Creates a global reference to a Java object.</p><pre class="declaration">
+jobject JNFNewGlobalRef(
+   JNIEnv *env,
+   jobject obj
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>A new global reference to <em>obj</em>.</p></div>   <a name="//apple_ref/c/func/JNFNewIntArray" title="JNFNewIntArray"></a><a name="//apple_ref/doc/c_ref/JNFNewIntArray" title="JNFNewIntArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_15" title="JNFNewIntArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_156"></a><h3 class="tight jump function">JNFNewIntArray</h3><p class="abstract">Creates a Java <code>int</code> array of a specified size.</p><pre class="declaration">
+jintArray JNFNewIntArray(
+   JNIEnv *env,
+   jsize length
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>length</em></dt><dd><p>The length of the array.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The created array.</p></div>   <a name="//apple_ref/c/func/JNFNewLongArray" title="JNFNewLongArray"></a><a name="//apple_ref/doc/c_ref/JNFNewLongArray" title="JNFNewLongArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_16" title="JNFNewLongArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_157"></a><h3 class="tight jump function">JNFNewLongArray</h3><p class="abstract">Creates a Java <code>long</code> array of a specified size.</p><pre class="declaration">
+jlongArray JNFNewLongArray(
+   JNIEnv *env,
+   jsize length
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>length</em></dt><dd><p>The length of the array.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The created array.</p></div>   <a name="//apple_ref/c/func/JNFNewObject" title="JNFNewObject"></a><a name="//apple_ref/doc/c_ref/JNFNewObject" title="JNFNewObject"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_5" title="JNFNewObject"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_158"></a><h3 class="tight jump function">JNFNewObject</h3><p class="abstract">Creates a new Java object of a given class with a given constructor.</p><pre class="declaration">
+jobject JNFNewObject(
+   JNIEnv *env,
+   JNFMemberInfo *constructor,
+   ...
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>constructor</em></dt><dd><p>The member information for the constructor.</p></dd><dt><em>...</em></dt><dd><p>The parameters to pass to the constructor.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The created Java object.</p></div>   <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFJNI.h</code></div><a name="//apple_ref/c/func/JNFNewObjectArray" title="JNFNewObjectArray"></a><a name="//apple_ref/doc/c_ref/JNFNewObjectArray" title="JNFNewObjectArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_10" title="JNFNewObjectArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_159"></a><h3 class="tight jump function">JNFNewObjectArray</h3><p class="abstract">Creates an array of a specified size for instances of a specified Java class.</p><pre class="declaration">
+jobjectArray JNFNewObjectArray(
+   JNIEnv *env,
+   JNFClassInfo *clazz,
+   jsize length
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>clazz</em></dt><dd><p>The class the array holds instances of.</p></dd><dt><em>length</em></dt><dd><p>The length of the array.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The created array.</p></div>   <a name="//apple_ref/c/func/JNFNewShortArray" title="JNFNewShortArray"></a><a name="//apple_ref/doc/c_ref/JNFNewShortArray" title="JNFNewShortArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_14" title="JNFNewShortArray"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_160"></a><h3 class="tight jump function">JNFNewShortArray</h3><p class="abstract">Creates a Java <code>short</code> array of a specified size.</p><pre class="declaration">
+jshortArray JNFNewShortArray(
+   JNIEnv *env,
+   jsize length
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>length</em></dt><dd><p>The length of the array.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The created array.</p></div>   <a name="//apple_ref/c/func/JNFNormalizedJavaStringForPath" title="JNFNormalizedJavaStringForPath"></a><a name="//apple_ref/doc/c_ref/JNFNormalizedJavaStringForPath" title="JNFNormalizedJavaStringForPath"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_87" title="JNFNormalizedJavaStringForPath"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_161"></a><h3 class="tight jump function">JNFNormalizedJavaStringForPath</h3><p class="abstract">Converts an <code>NSString</code> object to a <code>jstring</code> object suited for file system paths.</p><pre class="declaration">
+jstring JNFNormalizedJavaStringForPath(
+   JNIEnv *env,
+   NSString *path
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>path</em></dt><dd><p>The <code>NSString</code> object to convert.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>A <code>jstring</code> representation of <em>path</em> in precomposed UTF-16 format.</p></div>   <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFPath.h</code></div><a name="//apple_ref/c/func/JNFNormalizedNSStringForPath" title="JNFNormalizedNSStringForPath"></a><a name="//apple_ref/doc/c_ref/JNFNormalizedNSStringForPath" title="JNFNormalizedNSStringForPath"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_88" title="JNFNormalizedNSStringForPath"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_162"></a><h3 class="tight jump function">JNFNormalizedNSStringForPath</h3><p class="abstract">Converts a <code>jstring</code> object to an <code>NSString</code> object suited for file system paths.</p><pre class="declaration">
+NSString *JNFNormalizedNSStringForPath(
+   JNIEnv *env,
+   jstring *path
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>path</em></dt><dd><p>The <code>jstring</code> object to convert.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>An autoreleased <code>NSString</code> representation of <em>path</em> in decomposed UTF-16 format.</p></div>   <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFPath.h</code></div><a name="//apple_ref/c/func/JNFNSTimeIntervalToJavaMillis" title="JNFNSTimeIntervalToJavaMillis"></a><a name="//apple_ref/doc/c_ref/JNFNSTimeIntervalToJavaMillis" title="JNFNSTimeIntervalToJavaMillis"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_93" title="JNFNSTimeIntervalToJavaMillis"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_163"></a><h3 class="tight jump function">JNFNSTimeIntervalToJavaMillis</h3><p class="abstract">Converts an <code>NSTimeInterval</code> object calculated from the January 1, 2001 epoch of OS X to a millisecond time interval calculated from Java’s January 1, 1970 epoch.</p><pre class="declaration">
+jlong JNFNSTimeIntervalToJavaMillis(
+   NSTimeInterval intervalSince2001
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>intervalSince2001</em></dt><dd><p>The <code>NSTimeInterval</code> object to convert.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>A <code>jlong</code> representation of <code>intervalSince2001</code>.</p></div>   <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFDate.h</code></div><a name="//apple_ref/c/func/JNFNSToJavaCalendar" title="JNFNSToJavaCalendar"></a><a name="//apple_ref/doc/c_ref/JNFNSToJavaCalendar" title="JNFNSToJavaCalendar"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_91" title="JNFNSToJavaCalendar"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_164"></a><h3 class="tight jump function">JNFNSToJavaCalendar</h3><p class="abstract">Converts an <code>NSDate</code> object to a <code>java.util.Calendar</code> object.</p><pre class="declaration">
+jobject JNFNSToJavaCalendar(
+   JNIEnv *env,
+   NSDate *date
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>date</em></dt><dd><p>The <code>NSDate</code> object to convert.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>A <code>java.util.Calendar</code> representation of <code>date</code>.</p></div>   <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFDate.h</code></div><a name="//apple_ref/c/func/JNFNSToJavaNumber" title="JNFNSToJavaNumber"></a><a name="//apple_ref/doc/c_ref/JNFNSToJavaNumber" title="JNFNSToJavaNumber"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_83" title="JNFNSToJavaNumber"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_165"></a><h3 class="tight jump function">JNFNSToJavaNumber</h3><p class="abstract">Converts an <code>NSNumber</code> object to a <code>java.lang.Number</code> object.</p><pre class="declaration">
+jobject *JNFNSToJavaNumber(
+   JNIEnv *env,
+   NSNumber *n
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>n</em></dt><dd><p>The <code>NSNumber</code> object.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>A <code>java.lang.Long</code> representation of <em>n</em> if <em>n</em> is integral; otherwise, a <code>java.lang.Double</code> representation of <em>n</em>.</p></div>   <div class="api discussion"><h5>Discussion</h5><p>The return value is a JNI local reference. Code that calls this function must call <code>DeleteLocalRef</code> with the return value.</p></div>  <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFNumber.h</code></div><a name="//apple_ref/c/func/JNFNSToJavaString" title="JNFNSToJavaString"></a><a name="//apple_ref/doc/c_ref/JNFNSToJavaString" title="JNFNSToJavaString"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_86" title="JNFNSToJavaString"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_166"></a><h3 class="tight jump function">JNFNSToJavaString</h3><p class="abstract">Converts an <code>NSString</code> object to a <code>jstring</code> object.</p><pre class="declaration">
+jstring JNFNSToJavaString(
+   JNIEnv *env,
+   NSString *nsString
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>nsString</em></dt><dd><p>The <code>NSString</code> object to convert.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>A <code>jstring</code> representation of <em>nsString</em>.</p></div>   <div class="api discussion"><h5>Discussion</h5><p>The return value is a JNI local reference. Code that calls this function must call <code>DeleteLocalRef</code> with the return value.</p></div>  <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFString.h</code></div><a name="//apple_ref/c/func/JNFObjectClassName" title="JNFObjectClassName"></a><a name="//apple_ref/doc/c_ref/JNFObjectClassName" title="JNFObjectClassName"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_6" title="JNFObjectClassName"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_167"></a><h3 class="tight jump function">JNFObjectClassName</h3><p class="abstract">Returns the result of calling <code>Object.getClass().toString()</code> on a given Java object.</p><pre class="declaration">
+NSString *JNFObjectClassName(
+   JNIEnv* env,
+   jobject obj,
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of <code>obj.getClass().toString()</code> returned as an <code>NSString</code> object.</p></div>   <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFObject.h</code></div><a name="//apple_ref/c/func/JNFObjectEquals" title="JNFObjectEquals"></a><a name="//apple_ref/doc/c_ref/JNFObjectEquals" title="JNFObjectEquals"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_7" title="JNFObjectEquals"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_168"></a><h3 class="tight jump function">JNFObjectEquals</h3><p class="abstract">Returns the result of calling <code>Object.equals()</code> with two given Java objects.</p><pre class="declaration">
+BOOL JNFObjectEquals(
+   JNIEnv* env,
+   jobject a,
+   jobject b
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>a</em></dt><dd><p>The first Java object to compare.</p></dd><dt><em>b</em></dt><dd><p>The second Java object to compare.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p><code>YES</code> if <em>a</em> and <em>b</em> are equal according to <code>a.equals(b)</code>; otherwise, <code>NO</code>.</p></div>   <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFObject.h</code></div><a name="//apple_ref/c/func/JNFObjectToString" title="JNFObjectToString"></a><a name="//apple_ref/doc/c_ref/JNFObjectToString" title="JNFObjectToString"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_8" title="JNFObjectToString"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_169"></a><h3 class="tight jump function">JNFObjectToString</h3><p class="abstract">Returns the result of calling <code>Object.toString()</code> on a given Java object.</p><pre class="declaration">
+NSString *JNFObjectToString(
+   JNIEnv* env,
+   jobject obj,
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The result of <code>obj.toString()</code> returned as an <code>NSString</code> object.</p></div>   <div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFObject.h</code></div><a name="//apple_ref/c/func/JNFObtainEnv" title="JNFObtainEnv"></a><a name="//apple_ref/doc/c_ref/JNFObtainEnv" title="JNFObtainEnv"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW12" title="JNFObtainEnv"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_170"></a><h3 class="tight jump function">JNFObtainEnv</h3><p class="abstract">Attaches the current thread to the Java VM and obtains a JNI environment to interact with it.</p><pre class="declaration">
+JNIEnv *JNFObtainEnv(
+   JNFThreadContext *context
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>context</em></dt><dd><p>The current thread’s context.</p></dd></dl></div><div class="return_value"><h5 class="tight">Return Value</h5><p>The JNI environment.</p></div>   <div class="api discussion"><h5>Discussion</h5><p>You should use this function only when it is otherwise impossible to pass the JNI environment to the current context, such as in a callback.</p></div>  <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFThreadContext">“JNF Thread Context Flags”</a></code></li></ul></div><a name="//apple_ref/c/func/JNFPerformEnvBlock" title="JNFPerformEnvBlock"></a><a name="//apple_ref/doc/c_ref/JNFPerformEnvBlock" title="JNFPerformEnvBlock"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW14" title="JNFPerformEnvBlock"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_171"></a><h3 class="tight jump function">JNFPerformEnvBlock</h3><p class="abstract">Sets up a JNI environment and executes a specified block in it.</p><pre class="declaration">
+void JNFPerformEnvBlock(
+   JNFThreadContext context,
+   JNIEnvBlock block
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>context</em></dt><dd><p>The current thread’s context.</p></dd><dt><em>block</em></dt><dd><p>The block to execute.</p></dd></dl></div><div class="api discussion"><h5>Discussion</h5><p>This function calls <code><a href="#//apple_ref/c/func/JNFObtainEnv">JNFObtainEnv</a></code> before executing <em>block</em> and calls <code><a href="#//apple_ref/c/func/JNFReleaseEnv">JNFReleaseEnv</a></code> afterwards. Call this function when you otherwise do not have access to a JNI environment. The JNI environment created by this function is valid only for the duration of the execution of <em>block</em>.</p></div>  <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNIEnvBlock">JNIEnvBlock</a></code></li></ul></div><a name="//apple_ref/c/func/JNFReleaseEnv" title="JNFReleaseEnv"></a><a name="//apple_ref/doc/c_ref/JNFReleaseEnv" title="JNFReleaseEnv"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW13" title="JNFReleaseEnv"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_172"></a><h3 class="tight jump function">JNFReleaseEnv</h3><p class="abstract">Releases this thread’s JNI environment and detaches the thread from the Java VM.</p><pre class="declaration">
+void JNFReleaseEnv(
+   JNIEnv *env,
+   JNFThreadContext *context
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment.</p></dd><dt><em>context</em></dt><dd><p>The current thread’s context.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFThreadContext">“JNF Thread Context Flags”</a></code></li></ul></div><a name="//apple_ref/c/func/JNFReleaseStringUTF16UniChars" title="JNFReleaseStringUTF16UniChars"></a><a name="//apple_ref/doc/c_ref/JNFReleaseStringUTF16UniChars" title="JNFReleaseStringUTF16UniChars"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW3" title="JNFReleaseStringUTF16UniChars"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_173"></a><h3 class="tight jump function">JNFReleaseStringUTF16UniChars</h3><p class="abstract">Releases UTF-16 characters obtained with <code><a href="#//apple_ref/c/func/JNFGetStringUTF16UniChars">JNFGetStringUTF16UniChars</a></code>.</p><pre class="declaration">
+void JNFReleaseStringUTF16UniChars(
+   JNIEnv *env,
+   jstring javaString,
+   const unichar *unichars
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>javaString</em></dt><dd><p>The <code>jstring</code> object that the characters were obtained from.</p></dd><dt><em>unichars</em></dt><dd><p>The UTF-16 characters to release.</p></dd></dl></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFString.h</code></div><a name="//apple_ref/c/func/JNFReleaseStringUTF8Chars" title="JNFReleaseStringUTF8Chars"></a><a name="//apple_ref/doc/c_ref/JNFReleaseStringUTF8Chars" title="JNFReleaseStringUTF8Chars"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW5" title="JNFReleaseStringUTF8Chars"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_174"></a><h3 class="tight jump function">JNFReleaseStringUTF8Chars</h3><p class="abstract">Releases UTF-8 characters obtained with <code><a href="#//apple_ref/c/func/JNFGetStringUTF8Chars">JNFGetStringUTF8Chars</a></code>.</p><pre class="declaration">
+void JNFReleaseStringUTF8Chars(
+   JNIEnv *env,
+   jstring javaString,
+   const char *chars
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>javaString</em></dt><dd><p>The <code>jstring</code> object that the characters were obtained from.</p></dd><dt><em>chars</em></dt><dd><p>The UTF-8 characters to release.</p></dd></dl></div><div class="api declaredIn"><h5>Declared In</h5><code class="HeaderFile">JNFString.h</code></div><a name="//apple_ref/c/func/JNFSetBooleanField" title="JNFSetBooleanField"></a><a name="//apple_ref/doc/c_ref/JNFSetBooleanField" title="JNFSetBooleanField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_41" title="JNFSetBooleanField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_175"></a><h3 class="tight jump function">JNFSetBooleanField</h3><p class="abstract">Sets a non-static boolean field of a Java object.</p><pre class="declaration">
+void JNFSetBooleanField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field,
+   jboolean val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetByteField" title="JNFSetByteField"></a><a name="//apple_ref/doc/c_ref/JNFSetByteField" title="JNFSetByteField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_42" title="JNFSetByteField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_176"></a><h3 class="tight jump function">JNFSetByteField</h3><p class="abstract">Sets a non-static byte field of a Java object.</p><pre class="declaration">
+void JNFSetByteField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field,
+   jbyte val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetCharField" title="JNFSetCharField"></a><a name="//apple_ref/doc/c_ref/JNFSetCharField" title="JNFSetCharField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_43" title="JNFSetCharField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_177"></a><h3 class="tight jump function">JNFSetCharField</h3><p class="abstract">Sets a non-static char field of a Java object.</p><pre class="declaration">
+void JNFSetCharField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field,
+   jchar val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetDoubleField" title="JNFSetDoubleField"></a><a name="//apple_ref/doc/c_ref/JNFSetDoubleField" title="JNFSetDoubleField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_48" title="JNFSetDoubleField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_178"></a><h3 class="tight jump function">JNFSetDoubleField</h3><p class="abstract">Sets a non-static double field of a Java object.</p><pre class="declaration">
+void JNFSetDoubleField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field,
+   jdouble val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetFloatField" title="JNFSetFloatField"></a><a name="//apple_ref/doc/c_ref/JNFSetFloatField" title="JNFSetFloatField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_47" title="JNFSetFloatField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_179"></a><h3 class="tight jump function">JNFSetFloatField</h3><p class="abstract">Sets a non-static float field of a Java object.</p><pre class="declaration">
+void JNFSetFloatField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field,
+   jfloat val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetIntField" title="JNFSetIntField"></a><a name="//apple_ref/doc/c_ref/JNFSetIntField" title="JNFSetIntField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_45" title="JNFSetIntField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_180"></a><h3 class="tight jump function">JNFSetIntField</h3><p class="abstract">Sets a non-static int field of a Java object.</p><pre class="declaration">
+void JNFSetIntField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field,
+   jint val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetLongField" title="JNFSetLongField"></a><a name="//apple_ref/doc/c_ref/JNFSetLongField" title="JNFSetLongField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_46" title="JNFSetLongField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_181"></a><h3 class="tight jump function">JNFSetLongField</h3><p class="abstract">Sets a non-static long field of a Java object.</p><pre class="declaration">
+void JNFSetLongField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field,
+   jlong val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetObjectField" title="JNFSetObjectField"></a><a name="//apple_ref/doc/c_ref/JNFSetObjectField" title="JNFSetObjectField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_40" title="JNFSetObjectField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_182"></a><h3 class="tight jump function">JNFSetObjectField</h3><p class="abstract">Sets a non-static object field of a Java object.</p><pre class="declaration">
+void JNFSetObjectField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field,
+   jobject val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetShortField" title="JNFSetShortField"></a><a name="//apple_ref/doc/c_ref/JNFSetShortField" title="JNFSetShortField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_44" title="JNFSetShortField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_183"></a><h3 class="tight jump function">JNFSetShortField</h3><p class="abstract">Sets a non-static short field of a Java object.</p><pre class="declaration">
+void JNFSetShortField(
+   JNIEnv *env,
+   jobject obj,
+   JNFMemberInfo *field,
+   jshort val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>obj</em></dt><dd><p>The Java object.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetStaticBooleanField" title="JNFSetStaticBooleanField"></a><a name="//apple_ref/doc/c_ref/JNFSetStaticBooleanField" title="JNFSetStaticBooleanField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_51" title="JNFSetStaticBooleanField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_184"></a><h3 class="tight jump function">JNFSetStaticBooleanField</h3><p class="abstract">Sets a static boolean field of a Java object.</p><pre class="declaration">
+void JNFSetStaticBooleanField(
+   JNIEnv *env,
+   JNFMemberInfo *field,
+   jboolean val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetStaticByteField" title="JNFSetStaticByteField"></a><a name="//apple_ref/doc/c_ref/JNFSetStaticByteField" title="JNFSetStaticByteField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_52" title="JNFSetStaticByteField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_185"></a><h3 class="tight jump function">JNFSetStaticByteField</h3><p class="abstract">Sets a static byte field of a Java object.</p><pre class="declaration">
+void JNFSetStaticByteField(
+   JNIEnv *env,
+   JNFMemberInfo *field,
+   jbyte val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetStaticCharField" title="JNFSetStaticCharField"></a><a name="//apple_ref/doc/c_ref/JNFSetStaticCharField" title="JNFSetStaticCharField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_53" title="JNFSetStaticCharField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_186"></a><h3 class="tight jump function">JNFSetStaticCharField</h3><p class="abstract">Sets a static char field of a Java object.</p><pre class="declaration">
+void JNFSetStaticCharField(
+   JNIEnv *env,
+   JNFMemberInfo *field,
+   jchar val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetStaticDoubleField" title="JNFSetStaticDoubleField"></a><a name="//apple_ref/doc/c_ref/JNFSetStaticDoubleField" title="JNFSetStaticDoubleField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_58" title="JNFSetStaticDoubleField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_187"></a><h3 class="tight jump function">JNFSetStaticDoubleField</h3><p class="abstract">Sets a static double field of a Java object.</p><pre class="declaration">
+void JNFSetStaticDoubleField(
+   JNIEnv *env,
+   JNFMemberInfo *field,
+   jdouble val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetStaticFloatField" title="JNFSetStaticFloatField"></a><a name="//apple_ref/doc/c_ref/JNFSetStaticFloatField" title="JNFSetStaticFloatField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_57" title="JNFSetStaticFloatField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_188"></a><h3 class="tight jump function">JNFSetStaticFloatField</h3><p class="abstract">Sets a static float field of a Java object.</p><pre class="declaration">
+void JNFSetStaticFloatField(
+   JNIEnv *env,
+   JNFMemberInfo *field,
+   jfloat val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetStaticIntField" title="JNFSetStaticIntField"></a><a name="//apple_ref/doc/c_ref/JNFSetStaticIntField" title="JNFSetStaticIntField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_55" title="JNFSetStaticIntField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_189"></a><h3 class="tight jump function">JNFSetStaticIntField</h3><p class="abstract">Sets a static int field of a Java object.</p><pre class="declaration">
+void JNFSetStaticIntField(
+   JNIEnv *env,
+   JNFMemberInfo *field,
+   jint val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetStaticLongField" title="JNFSetStaticLongField"></a><a name="//apple_ref/doc/c_ref/JNFSetStaticLongField" title="JNFSetStaticLongField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_56" title="JNFSetStaticLongField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_190"></a><h3 class="tight jump function">JNFSetStaticLongField</h3><p class="abstract">Sets a static long field of a Java object.</p><pre class="declaration">
+void JNFSetStaticLongField(
+   JNIEnv *env,
+   JNFMemberInfo *field,
+   jlong val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetStaticObjectField" title="JNFSetStaticObjectField"></a><a name="//apple_ref/doc/c_ref/JNFSetStaticObjectField" title="JNFSetStaticObjectField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_50" title="JNFSetStaticObjectField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_191"></a><h3 class="tight jump function">JNFSetStaticObjectField</h3><p class="abstract">Sets a static object field of a Java object.</p><pre class="declaration">
+void JNFSetStaticObjectField(
+   JNIEnv *env,
+   JNFMemberInfo *field,
+   jobject val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/func/JNFSetStaticShortField" title="JNFSetStaticShortField"></a><a name="//apple_ref/doc/c_ref/JNFSetStaticShortField" title="JNFSetStaticShortField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_54" title="JNFSetStaticShortField"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_192"></a><h3 class="tight jump function">JNFSetStaticShortField</h3><p class="abstract">Sets a static short field of a Java object.</p><pre class="declaration">
+void JNFSetStaticShortField(
+   JNIEnv *env,
+   JNFMemberInfo *field,
+   jshort val
+);
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd><dt><em>field</em></dt><dd><p>The member information for the object field.</p></dd><dt><em>val</em></dt><dd><p>The new value of <em>field</em>.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/macro/JNF_CLASS_CACHE" title="JNF_CLASS_CACHE" role="Macro"></a><a name="//apple_ref/doc/c_ref/JNF_CLASS_CACHE" title="JNF_CLASS_CACHE" role="Macro"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW8" title="JNF_CLASS_CACHE" role="Macro"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_193"></a><h3 class="tight jump function">JNF_CLASS_CACHE</h3><p class="abstract">Creates a <code>JNFClassInfo</code> struct with desired parameters.</p><pre class="declaration">
+#define JNF_CLASS_CACHE(cache_symbol, name) \
+JNFClassInfo cache_symbol = {name, NULL}
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>cache_symbol</em></dt><dd><p>The variable name of the struct.</p></dd><dt><em>name</em></dt><dd><p>The name of the class that the struct represents.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFClassInfo">JNFClassInfo</a></code></li></ul></div><a name="//apple_ref/c/macro/JNF_COCOA_ENTER" title="JNF_COCOA_ENTER" role="Macro"></a><a name="//apple_ref/doc/c_ref/JNF_COCOA_ENTER" title="JNF_COCOA_ENTER" role="Macro"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW6" title="JNF_COCOA_ENTER" role="Macro"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_194"></a><h3 class="tight jump function">JNF_COCOA_ENTER</h3><p class="abstract">A macro that indicates the beginning of a JNI method.</p><pre class="declaration">
+#define JNF_COCOA_ENTER(env)                                     \
+{                                                                \
+   JNFAutoreleasePoolToken* _token = JNFNativeMethodEnter();    \
+   JNF_COCOA_DURING(env)
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd></dl></div><div class="api discussion"><h5>Discussion</h5><p>This macro sets up an autorelease pool for a JNI method and initiates a try block.</p><p>You should include this macro at the beginning of every JNI method.</p></div>  <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/macro/JNF_COCOA_EXIT">JNF_COCOA_EXIT</a></code></li></ul></div><a name="//apple_ref/c/macro/JNF_COCOA_EXIT" title="JNF_COCOA_EXIT" role="Macro"></a><a name="//apple_ref/doc/c_ref/JNF_COCOA_EXIT" title="JNF_COCOA_EXIT" role="Macro"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW7" title="JNF_COCOA_EXIT" role="Macro"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_195"></a><h3 class="tight jump function">JNF_COCOA_EXIT</h3><p class="abstract">A macro that indicates the end of a JNI method.</p><pre class="declaration">
+#define JNF_COCOA_EXIT(env)                                     \
+   JNF_COCOA_HANDLE(env)                                       \
+   if (_token) JNFNativeMethodExit(_token);                    \
+}
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>env</em></dt><dd><p>The JNI environment of the calling thread.</p></dd></dl></div><div class="api discussion"><h5>Discussion</h5><p>This macro cleans up the autorelease pool created by <code>JNF_COCOA_ENTER</code> and throws any exceptions caught during the method to the Java VM.</p><p>You should include this macro at the end of every JNI method.</p></div>  <div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/macro/JNF_COCOA_ENTER">JNF_COCOA_ENTER</a></code></li></ul></div><a name="//apple_ref/c/macro/JNF_CTOR_CACHE" title="JNF_CTOR_CACHE" role="Macro"></a><a name="//apple_ref/doc/c_ref/JNF_CTOR_CACHE" title="JNF_CTOR_CACHE" role="Macro"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW11" title="JNF_CTOR_CACHE" role="Macro"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_196"></a><h3 class="tight jump function">JNF_CTOR_CACHE</h3><p class="abstract">Creates a <code>JNFMemberInfo</code> struct for a constructor method with desired parameters.</p><pre class="declaration">
+#define JNF_CTOR_CACHE(cache_symbol, class_cache_symbol, sig) \
+JNFMemberInfo _ ## cache_symbol = {"&lt;init&gt;", sig, NO, &amp;class_cache_symbol, {NULL}}, *cache_symbol=&amp;_ ## cache_symbol
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>cache_symbol</em></dt><dd><p>The variable name of the struct.</p></dd><dt><em>class_cache_symbol</em></dt><dd><p>The <code>JNFClassInfo</code> struct that represents the class that this field or method is a member of.</p></dd><dt><em>sig</em></dt><dd><p>The signature of the field or method.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/macro/JNF_MEMBER_CACHE" title="JNF_MEMBER_CACHE" role="Macro"></a><a name="//apple_ref/doc/c_ref/JNF_MEMBER_CACHE" title="JNF_MEMBER_CACHE" role="Macro"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW9" title="JNF_MEMBER_CACHE" role="Macro"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_197"></a><h3 class="tight jump function">JNF_MEMBER_CACHE</h3><p class="abstract">Creates a <code>JNFMemberInfo</code> struct for a non-static field or method with desired parameters.</p><pre class="declaration">
+#define JNF_MEMBER_CACHE(cache_symbol, class_cache_symbol, name, sig) \
+JNFMemberInfo _ ## cache_symbol = {name, sig, NO, &amp;class_cache_symbol, {NULL}}, *cache_symbol=&amp;_ ## cache_symbol
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>cache_symbol</em></dt><dd><p>The variable name of the struct.</p></dd><dt><em>class_cache_symbol</em></dt><dd><p>The <code>JNFClassInfo</code> struct that represents the class that this field or method is a member of.</p></dd><dt><em>name</em></dt><dd><p>The name of the field or method.</p></dd><dt><em>sig</em></dt><dd><p>The signature of the field or method.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div><a name="//apple_ref/c/macro/JNF_STATIC_MEMBER_CACHE" title="JNF_STATIC_MEMBER_CACHE" role="Macro"></a><a name="//apple_ref/doc/c_ref/JNF_STATIC_MEMBER_CACHE" title="JNF_STATIC_MEMBER_CACHE" role="Macro"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-SW10" title="JNF_STATIC_MEMBER_CACHE" role="Macro"></a><a name="//apple_ref/doc/uid/TP40009262-CH3-DontLinkElementID_198"></a><h3 class="tight jump function">JNF_STATIC_MEMBER_CACHE</h3><p class="abstract">Creates a <code>JNFMemberInfo</code> struct for a static field or method with desired parameters.</p><pre class="declaration">
+#define JNF_STATIC_MEMBER_CACHE(cache_symbol, class_cache_symbol, name, sig) \
+JNFMemberInfo _ ## cache_symbol = {name, sig, YES, &amp;class_cache_symbol, {NULL}}, *cache_symbol=&amp;_ ## cache_symbol
+</pre><div class="api parameters"><h5>Parameters</h5><dl class="termdef"><dt><em>cache_symbol</em></dt><dd><p>The variable name of the struct.</p></dd><dt><em>class_cache_symbol</em></dt><dd><p>The <code>JNFClassInfo</code> struct that represents the class that this field or method is a member of.</p></dd><dt><em>name</em></dt><dd><p>The name of the field or method.</p></dd><dt><em>sig</em></dt><dd><p>The signature of the field or method.</p></dd></dl></div><div class="api seeAlso"><h5>See Also</h5><ul><li>  <code><a href="#//apple_ref/c/tdef/JNFMemberInfo">JNFMemberInfo</a></code></li></ul></div></section><section><a name="//apple_ref/doc/uid/TP40009262-CH4-DontLinkElementID_101" title="Data Types"></a><h2 class="jump">Data Types</h2><a name="//apple_ref/c/tdef/JNIEnvBlock" title="JNIEnvBlock"></a><a name="//apple_ref/doc/c_ref/JNIEnvBlock" title="JNIEnvBlock"></a><a name="//apple_ref/doc/uid/TP40009262-CH4-SW3" title="JNIEnvBlock"></a><a name="//apple_ref/doc/uid/TP40009262-CH4-DontLinkElementID_199"></a><h3 class="tight jump typeDef">JNIEnvBlock</h3><p class="abstract">Defines the signature for a block object passed to the <code><a href="#//apple_ref/c/func/JNFPerformEnvBlock">JNFPerformEnvBlock</a></code> function.</p><pre class="declaration">
+typedef void (^JNIEnvBlock)(JNIEnv *);
+</pre><a name="//apple_ref/c/tdef/JNFClassInfo" title="JNFClassInfo"></a><a name="//apple_ref/c/tag/_JNFClassInfo" title="JNFClassInfo"></a><a name="//apple_ref/doc/c_ref/JNFClassInfo" title="JNFClassInfo"></a><a name="//apple_ref/doc/uid/TP40009262-CH4-SW2" title="JNFClassInfo"></a><a name="//apple_ref/doc/uid/TP40009262-CH4-DontLinkElementID_200"></a><h3 class="tight jump struct">JNFClassInfo</h3><p class="abstract">A struct for caching a Java class reference.</p><pre class="declaration">
+typedef struct _JNFClassInfo {
+   const char *name;
+   jclass cls;
+} JNFClassInfo;
+</pre><h5 class="tight">Fields</h5><dl class="termdef"><dt><code>name</code></dt><dd><p>The fully qualified class name, for instance <code>java/lang/String</code>.</p></dd><dt><code>cls</code></dt><dd><p>The JNI global class reference.</p></dd></dl><div class="api discussion"><h5>Discussion</h5><p>This data type should be created with the <code><a href="#//apple_ref/c/macro/JNF_CLASS_CACHE">JNF_CLASS_CACHE</a></code> macro.</p></div>  <a name="//apple_ref/c/tdef/JNFMemberInfo" title="JNFMemberInfo"></a><a name="//apple_ref/c/tag/_JNFMemberInfo" title="JNFMemberInfo"></a><a name="//apple_ref/doc/c_ref/JNFMemberInfo" title="JNFMemberInfo"></a><a name="//apple_ref/doc/uid/TP40009262-CH4-SW1" title="JNFMemberInfo"></a><a name="//apple_ref/doc/uid/TP40009262-CH4-DontLinkElementID_201"></a><h3 class="tight jump struct">JNFMemberInfo</h3><p class="abstract">A struct for caching field or method identification information.</p><pre class="declaration">
+typedef struct _JNFMemberInfo {
+   const char *name;
+   const char *sig;
+   BOOL isStatic;
+   JNFClassInfo *classInfo;
+   union _j {
+      jfieldID fieldID;
+      jmethodID methodID;
+   } j;
+} JNFMemberInfo;
+</pre><h5 class="tight">Fields</h5><dl class="termdef"><dt><code>name</code></dt><dd><p>The name of the member.</p></dd><dt><code>sig</code></dt><dd><p>The signature of the member.</p></dd><dt><code>isStatic</code></dt><dd><p><code>YES</code> if the member is static; otherwise, <code>NO</code>.</p></dd><dt><code>classInfo</code></dt><dd><p>The class that this field or method belongs to.</p></dd><dt><code>fieldID</code></dt><dd><p>If this is a field, the field ID.</p></dd><dt><code>methodID</code></dt><dd><p>If this is a method, the field ID.</p></dd></dl><div class="api discussion"><h5>Discussion</h5><p>This data type should be created with the <code><a href="#//apple_ref/c/macro/JNF_MEMBER_CACHE">JNF_MEMBER_CACHE</a></code>, <code><a href="#//apple_ref/c/macro/JNF_STATIC_MEMBER_CACHE">JNF_STATIC_MEMBER_CACHE</a></code>, or <code><a href="#//apple_ref/c/macro/JNF_CTOR_CACHE">JNF_CTOR_CACHE</a></code> macro.</p></div>  </section><section><a name="//apple_ref/doc/uid/TP40009262-CH5-SW1" title="Constants"></a><h2 class="jump">Constants</h2><a name="//apple_ref/c/tdef/JNFThreadContext" title="JNF Thread Context Flags" role="Enum"></a><a name="//apple_ref/doc/c_ref/JNFThreadContext" title="JNF Thread Context Flags" role="Enum"></a><a name="//apple_ref/doc/uid/TP40009262-CH5-SW5" title="JNF Thread Context Flags" role="Enum"></a><a name="//apple_ref/doc/uid/TP40009262-CH5-DontLinkElementID_202"></a><h3 class="constantGroup">JNF Thread Context Flags</h3><p class="abstract">Flags for describing the current thread’s context.</p><pre class="declaration">
+enum {
+   JNFThreadDetachImmediately = (1 &lt;&lt; 1),
+   JNFThreadDetachOnThreadDeath = (1 &lt;&lt; 2),
+   JNFThreadSetSystemClassLoaderOnAttach = (1 &lt;&lt; 3)
+};
+typedef jlong JNFThreadContext;
+</pre><h5 class="tight">Constants</h5><dl class="termdef"><a name="//apple_ref/c/econst/JNFThreadDetachImmediately" title="JNFThreadDetachImmediately"></a><a name="//apple_ref/doc/c_ref/JNFThreadDetachImmediately" title="JNFThreadDetachImmediately"></a><a name="//apple_ref/doc/uid/TP40009262-CH5-DontLinkElementID_203"></a><dt><code class="jump constantName">JNFThreadDetachImmediately</code></dt><dd><p>A flag indicating that the thread should detach from the Java VM immediately.</p></dd><a name="//apple_ref/c/econst/JNFThreadDetachOnThreadDeath" title="JNFThreadDetachOnThreadDeath"></a><a name="//apple_ref/doc/c_ref/JNFThreadDetachOnThreadDeath" title="JNFThreadDetachOnThreadDeath"></a><a name="//apple_ref/doc/uid/TP40009262-CH5-DontLinkElementID_204"></a><dt><code class="jump constantName">JNFThreadDetachOnThreadDeath</code></dt><dd><p>A flag indicating that the thread should automatically detach from the Java VM before it dies.</p></dd><a name="//apple_ref/c/econst/JNFThreadSetSystemClassLoaderOnAttach" title="JNFThreadSetSystemClassLoaderOnAttach"></a><a name="//apple_ref/doc/c_ref/JNFThreadSetSystemClassLoaderOnAttach" title="JNFThreadSetSystemClassLoaderOnAttach"></a><a name="//apple_ref/doc/uid/TP40009262-CH5-DontLinkElementID_205"></a><dt><code class="jump constantName">JNFThreadSetSystemClassLoaderOnAttach</code></dt><dd><p>A flag indicating that the thread should set the Java VM’s class loader when it attaches.</p></dd></dl></section>
+        <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
+            <a class="nextLink" rel="next" href="/web/20140604045802/https://developer.apple.com/library/mac/documentation/CrossPlatform/Reference/JavaNativeFoundation_Functions/RevisionHistory.html">Next</a>
+        </div><br/>
+        <div class="copyright"><br/><hr/><div align="center"><p class="content_text" lang="en" dir="ltr"> Copyright  2011 Apple Inc. All Rights Reserved. <a href="https://web.archive.org/web/20140604045802/http://www.apple.com/legal/internet-services/terms/site.html" target="_blank">Terms of Use</a>   |  <a href="https://web.archive.org/web/20140604045802/http://www.apple.com/privacy/" target="_blank">Privacy Policy</a>  |  Updated: 2011-01-06</p></div></div>
+
+        <div id="pediaWindow">
+            <div id="pediaHeader"></div>
+            <div id="pediaBody"></div>
+        </div>
+    </article>
+
+    <div id="blackout">
+    <div id="preload"></div>
+</div>
+<div id="leave_feedback" class="button" role="button" tabindex="0">Feedback</div>
+<div id="modal" aria-hidden="true">
+    <div id="closebox" tabindex="0" aria-label="Close feedback form" role="button"></div>
+    <div id="sending" class="hidden">
+        <h2 tabindex="0">Sending feedback&hellip;</h2>
+        <div id="sending_img"></div>
+    </div>
+    <div id="error" class="hidden">
+        <h2 tabindex="0">We&rsquo;re sorry, an error has occurred.</h2>
+        <p>Please try submitting your feedback later.</p>
+        <div id="error_icon"></div>
+    </div>
+    <div id="success" class="hidden">
+        <h2 tabindex="0">Thank you for providing feedback!</h2>
+        <p>Your input helps improve our developer documentation.</p>
+        <div id="thank_you_icon"></div>
+    </div>
+    
+    <form id="feedback" action="#" method="post">
+        <div class="left-leaf">
+            <h2 id="helpful_title" data-asterisk="a1" tabindex="0">How helpful is this document?</h2>     
+            <sup id="a1" class="asterisk" aria-hidden="true">*</sup>
+
+            <div id="star_group" role="radiogroup" aria-required="true">
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="1"/> 
+                    Very helpful
+                </label>
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="2"/> 
+                    Somewhat helpful
+                </label>
+                <label>
+                    <input class="radio" type="radio" name="helped" value="3"/> 
+                    Not helpful
+                </label>
+            </div>
+        </div>
+        <div class="right-leaf">
+            <h2>How can we improve this document?</h2>
+            <div id="improve" class="checkboxes">
+                <label>
+                    <input type="checkbox" name="typo"/> 
+                    Fix typos or links
+                </label>
+                <label>
+                    <input type="checkbox" name="infoIncorrect"/> 
+                    Fix incorrect information
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_examples"/> 
+                    Add or update code samples
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_art"/> 
+                    Add or update illustrations
+                </label>
+                <label>
+                    <input type="checkbox" name="missingInfo"/> 
+                    Add information about...
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comment" name="problem" cols="70" rows="8" placeholder="Please tell us more about your experience with this document" data-asterisk="a2" required></textarea>
+        <sup id="a2" class="asterisk" aria-hidden="true">*</sup>
+
+        <input id="email" type="email" name="email" placeholder="Email (optional)" size="48">
+
+        <p class="fineprint">
+            <em aria-hidden="true"><span>*</span> Required information</em>
+        </p> 
+
+        <input id="submit" type="button" value="Send"/>
+
+        <section id="legal">
+            <p>
+                To submit a product bug or enhancement request, please visit the 
+                <a href="https://web.archive.org/web/20140604045802/https://developer.apple.com/bugreporter/" target="_blank">Bug Reporter</a> 
+                page.
+            </p>
+            <p>
+                Please read <a href="https://web.archive.org/web/20140604045802/http://www.apple.com/legal/policies/ideas.html" target="_blank">Apple's Unsolicited Idea Submission Policy</a> 
+                before you send us your feedback.
+            </p> 
+        </section>
+    </form>
+</div>
+
+    
+    <script charset="utf-8" src="/web/20140604045802js_/https://developer.apple.com/library/mac/Resources/910/JavaScript/lib/prototype.js"></script>
+    <script src="/web/20140604045802js_/https://developer.apple.com/library/mac/Resources/910/JavaScript/library.js"></script>
+    <script src="/web/20140604045802js_/https://developer.apple.com/library/mac/Resources/910/JavaScript/feedback.js"></script>
+</body>
+<script type="text/javascript" src="/web/20140604045802js_/https://developer.apple.com/library/webstats/pagetracker.js"></script>
+<script type="text/javascript">
+if(typeof PageTracker !== 'undefined') {
+  if(window.addEventListener) {
+    window.addEventListener("load", function(){PageTracker.logPageLoad()},false);
+  } else if(window.attachEvent) {
+    window.attachEvent("onload",function(){PageTracker.logPageLoad()});
+  }
+}
+</script>
+</html>
